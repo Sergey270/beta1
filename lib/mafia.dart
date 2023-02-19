@@ -20,6 +20,7 @@ class _MafiaState extends State<Mafia> {
   int fouls = 0;
   int voting = 0;
 
+
   void color() {
 
     deletePlayer
