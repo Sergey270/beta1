@@ -29,7 +29,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: const Color(0xF7F8F8FF),
+      //  backgroundColor: const Color(0xF7F8F8FF),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectIndex,
           onTap: onSelectTap,
