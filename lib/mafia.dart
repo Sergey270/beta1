@@ -67,7 +67,7 @@ class _MafiaState extends State<Mafia> {
                 : IconButton(
                     icon: const Icon(
                       Icons.remove_red_eye,
-                      color: Colors.black,
+                      color: Color(0x30F77F0),
                     ),
                     onPressed: () {
                       setState(() {
