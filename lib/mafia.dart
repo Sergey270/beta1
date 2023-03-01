@@ -1,4 +1,4 @@
-import                               'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 import 'main_screen_widget.dart';
 
@@ -10,8 +10,6 @@ class Mafia extends StatefulWidget {
 }
 
 class _MafiaState extends State<Mafia> {
-
-
   List<String> textNumber = ['👮‍♀'];
   bool hideRoles = true;
   bool space = true;
@@ -20,12 +18,10 @@ class _MafiaState extends State<Mafia> {
   int fouls = 0;
   int voting = 0;
 
-
   void color() {
-
     deletePlayer
-        ? cleanColor = Colors.grey
-        : cleanColor = const Color(0x448AFF73);
+        ? cleanColor = Colors.black
+        : cleanColor = const Color(0x80181818);
   }
 
   @override
@@ -56,7 +52,7 @@ class _MafiaState extends State<Mafia> {
                 ? IconButton(
                     icon: const Icon(
                       Icons.remove_red_eye_outlined,
-                      color: Colors.black,
+                      color: Color.fromRGBO(15, 119, 240, 1),
                     ),
                     onPressed: () {
                       setState(() {
@@ -66,8 +62,8 @@ class _MafiaState extends State<Mafia> {
                   )
                 : IconButton(
                     icon: const Icon(
-                      Icons.remove_red_eye,
-                      color: Color(0x30F77F0),
+                      Icons.remove_red_eye_rounded,
+                      color: Color.fromRGBO(15, 119, 240, 1),
                     ),
                     onPressed: () {
                       setState(() {
@@ -76,15 +72,19 @@ class _MafiaState extends State<Mafia> {
                     },
                   ),
             title: const Text(
-              'Мафия ведущий',
-              style: TextStyle(fontSize: 26, color: Colors.black),
+              'Ведение игры',
+              style: TextStyle(
+                fontSize: 17,
+                color: Colors.black,
+                fontWeight: FontWeight.w600,
+              ),
             ),
             elevation: 0,
             actions: [
               IconButton(
                 icon: const Icon(
                   Icons.restart_alt,
-                  color: Colors.black,
+                  color: Color.fromRGBO(15, 119, 240, 1),
                 ),
                 onPressed: () {
                   Navigator.push(
@@ -113,7 +113,7 @@ class _MafiaState extends State<Mafia> {
                                 ? Colors.white
                                 : Colors.transparent,
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(5)),
+                                const BorderRadius.all(Radius.circular(10)),
                           ),
                           height: 52,
                           width: double.infinity,
@@ -129,16 +129,24 @@ class _MafiaState extends State<Mafia> {
                                             textNumber[0],
                                             style: TextStyle(
                                               fontSize: 22.0,
-                                              color: cleanColor,
+                                              color: deletePlayer
+                                                  ? cleanColor = Colors.black
+                                                  : cleanColor =
+                                                      const Color(0x66181818),
+                                              fontWeight: FontWeight.w700,
                                             ),
                                           )
                                         : const SizedBox(),
                                     Text(
                                       '1',
                                       style: TextStyle(
-                                        color: cleanColor,
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.w400,
+                                        color: deletePlayer
+                                            ? cleanColor = Colors.black
+                                            : cleanColor = const Color(
+                                                0x80999999,
+                                              ),
+                                        fontSize: 17.0,
+                                        fontWeight: FontWeight.w700,
                                       ),
                                     ),
                                     TextButton(
@@ -152,14 +160,18 @@ class _MafiaState extends State<Mafia> {
                                         setState(() {
                                           space = true;
                                           deletePlayer = !deletePlayer;
-                                          color();
+                                          // color();
                                         });
                                       },
                                       child: Text(
                                         '╳',
                                         style: TextStyle(
-                                          fontSize: 24.0,
-                                          color: cleanColor,
+                                          fontSize: 17.0,
+                                          color: deletePlayer
+                                              ? cleanColor = Colors.red
+                                              : cleanColor =
+                                                  const Color(0x80999999),
+                                          fontWeight: FontWeight.w700,
                                         ),
                                       ),
                                     ),
@@ -167,8 +179,8 @@ class _MafiaState extends State<Mafia> {
                                 ),
                               ),
                               space
-                                  ? Expanded(
-                                      child: Container(),
+                                  ? const Expanded(
+                                      child: SizedBox(),
                                     )
                                   : const SizedBox(),
                               Expanded(
@@ -204,14 +216,20 @@ class _MafiaState extends State<Mafia> {
                                               child: const Text(
                                                 '-',
                                                 style: TextStyle(
-                                                  fontSize: 24.0,
+                                                  fontSize: 17.0,
                                                   color: Color.fromRGBO(
-                                                      24, 24, 24, 1),
-                                                  fontWeight: FontWeight.w400,
+                                                      15, 119, 240, 1),
+                                                  fontWeight: FontWeight.w700,
                                                 ),
                                               ),
                                             ),
-                                            Text('$fouls'),
+                                            Text(
+                                              '$fouls',
+                                              style: const TextStyle(
+                                                fontSize: 17.0,
+                                                color: Colors.black,
+                                              ),
+                                            ),
                                             TextButton(
                                               style: TextButton.styleFrom(
                                                 minimumSize: const Size(
@@ -229,10 +247,10 @@ class _MafiaState extends State<Mafia> {
                                               child: const Text(
                                                 '+',
                                                 style: TextStyle(
-                                                  fontSize: 24.0,
+                                                  fontSize: 17.0,
                                                   color: Color.fromRGBO(
-                                                      24, 24, 24, 1),
-                                                  fontWeight: FontWeight.w400,
+                                                      15, 119, 240, 1),
+                                                  fontWeight: FontWeight.w700,
                                                 ),
                                               ),
                                             ),
@@ -255,10 +273,11 @@ class _MafiaState extends State<Mafia> {
                               ),
                               deletePlayer
                                   ? Container(
-                                      width: 48,
+                                      width: 42,
                                       color: space
                                           ? Colors.transparent
-                                          : Colors.blue,
+                                          : const Color.fromRGBO(
+                                              15, 119, 240, 1),
                                       height: double.infinity,
                                       child: TextButton(
                                         style: TextButton.styleFrom(
@@ -276,16 +295,15 @@ class _MafiaState extends State<Mafia> {
                                           '👍',
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
-                                            fontSize: 24.0,
+                                            fontSize: 22.0,
                                             color:
-                                                Color.fromRGBO(24, 24, 24, 1),
-                                            fontWeight: FontWeight.w400,
+                                                Color.fromRGBO(15, 119, 240, 1),
                                           ),
                                         ),
                                       ),
                                     )
                                   : const SizedBox(
-                                      width: 48,
+                                      width: 42,
                                     ),
                               space
                                   ? const SizedBox()
@@ -293,7 +311,8 @@ class _MafiaState extends State<Mafia> {
                                       child: Container(
                                         color: space
                                             ? Colors.transparent
-                                            : Colors.blue,
+                                            : const Color.fromRGBO(
+                                                15, 119, 240, 1),
                                         child: Row(
                                           children: [
                                             Row(
@@ -328,15 +347,20 @@ class _MafiaState extends State<Mafia> {
                                                   child: const Text(
                                                     '-',
                                                     style: TextStyle(
-                                                      fontSize: 24.0,
-                                                      color: Color.fromRGBO(
-                                                          24, 24, 24, 1),
+                                                      fontSize: 17.0,
+                                                      color: Colors.white,
                                                       fontWeight:
-                                                          FontWeight.w400,
+                                                          FontWeight.w700,
                                                     ),
                                                   ),
                                                 ),
-                                                Text('$voting'),
+                                                Text(
+                                                  '$voting',
+                                                  style: const TextStyle(
+                                                    fontSize: 17.0,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
                                                 TextButton(
                                                   style: TextButton.styleFrom(
                                                     minimumSize: const Size(
@@ -354,11 +378,10 @@ class _MafiaState extends State<Mafia> {
                                                   child: const Text(
                                                     '+',
                                                     style: TextStyle(
-                                                      fontSize: 24.0,
-                                                      color: Color.fromRGBO(
-                                                          24, 24, 24, 1),
+                                                      fontSize: 17.0,
+                                                      color: Colors.white,
                                                       fontWeight:
-                                                          FontWeight.w400,
+                                                          FontWeight.w700,
                                                     ),
                                                   ),
                                                 ),

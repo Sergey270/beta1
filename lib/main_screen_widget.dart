@@ -35,14 +35,17 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
           onTap: onSelectTap,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.format_list_numbered),
-              label: '',
+              icon: Icon(Icons.numbers),
+              label: 'Раздача номеров',
             ),
+
             BottomNavigationBarItem(
               icon: Icon(Icons.manage_accounts),
-              label: '',
+              label: 'Ведение игры',
             ),
           ],
+
+          selectedItemColor: const Color.fromRGBO(15, 119, 240, 1),
         ),
         body: IndexedStack(
           index: _selectIndex,

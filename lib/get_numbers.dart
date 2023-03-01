@@ -219,6 +219,7 @@ class _GetNumbersState extends State<GetNumbers> {
           resizeToAvoidBottomInset: false,
           backgroundColor: const Color(0xFFF3F6F9),
           appBar: AppBar(
+
             centerTitle: true,
             backgroundColor: Colors.white,
             title: const Text(
@@ -235,7 +236,7 @@ class _GetNumbersState extends State<GetNumbers> {
                 icon: const Icon(
                   Icons.restart_alt,
                   color: Color.fromRGBO(15, 119, 240, 1),
-                ),
+                 ),
                 onPressed: () {
                   Navigator.push(
                     context,
