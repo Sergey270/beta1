@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import 'main_screen_widget.dart';
+import 'timer.dart';
 
 class Mafia extends StatefulWidget {
   const Mafia({Key? key}) : super(key: key);
@@ -90,7 +93,8 @@ class _MafiaState extends State<Mafia> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const MainScreenWidget()),
+                        builder: (context) => const MainScreenWidget()
+                    ),
                   );
                 },
               ),
@@ -104,7 +108,7 @@ class _MafiaState extends State<Mafia> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(
-                        top: 13, bottom: 0, left: 13, right: 13),
+                        top: 13, bottom: 0, left: 12, right: 12),
                     child: Column(
                       children: [
                         Container(
@@ -191,7 +195,7 @@ class _MafiaState extends State<Mafia> {
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             const SizedBox(
-                                              width: 1,
+                                              width: 0,
                                               child: VerticalDivider(
                                                 thickness: 1,
                                                 indent: 11,
@@ -219,7 +223,7 @@ class _MafiaState extends State<Mafia> {
                                                   fontSize: 17.0,
                                                   color: Color.fromRGBO(
                                                       15, 119, 240, 1),
-                                                  fontWeight: FontWeight.w700,
+                                                  fontWeight: FontWeight.w600,
                                                 ),
                                               ),
                                             ),
@@ -250,15 +254,14 @@ class _MafiaState extends State<Mafia> {
                                                   fontSize: 17.0,
                                                   color: Color.fromRGBO(
                                                       15, 119, 240, 1),
-                                                  fontWeight: FontWeight.w700,
+                                                  fontWeight: FontWeight.w600,
                                                 ),
                                               ),
                                             ),
                                             space
                                                 ? const SizedBox(
-                                                    width: 1,
+                                                    width: 0,
                                                     child: VerticalDivider(
-                                                      // width: 20,
                                                       thickness: 1,
                                                       indent: 11,
                                                       endIndent: 11,
@@ -273,7 +276,7 @@ class _MafiaState extends State<Mafia> {
                               ),
                               deletePlayer
                                   ? Container(
-                                      width: 42,
+                                      width: 40,
                                       color: space
                                           ? Colors.transparent
                                           : const Color.fromRGBO(
@@ -303,7 +306,7 @@ class _MafiaState extends State<Mafia> {
                                       ),
                                     )
                                   : const SizedBox(
-                                      width: 42,
+                                      width: 40,
                                     ),
                               space
                                   ? const SizedBox()
@@ -321,7 +324,7 @@ class _MafiaState extends State<Mafia> {
                                                       .spaceBetween,
                                               children: [
                                                 const SizedBox(
-                                                  width: 1,
+                                                  width: 0,
                                                   child: VerticalDivider(
                                                     // width: 20,
                                                     thickness: 1,
@@ -350,7 +353,7 @@ class _MafiaState extends State<Mafia> {
                                                       fontSize: 17.0,
                                                       color: Colors.white,
                                                       fontWeight:
-                                                          FontWeight.w700,
+                                                          FontWeight.w600,
                                                     ),
                                                   ),
                                                 ),
@@ -381,7 +384,7 @@ class _MafiaState extends State<Mafia> {
                                                       fontSize: 17.0,
                                                       color: Colors.white,
                                                       fontWeight:
-                                                          FontWeight.w700,
+                                                          FontWeight.w600,
                                                     ),
                                                   ),
                                                 ),
@@ -397,6 +400,50 @@ class _MafiaState extends State<Mafia> {
                       ],
                     ),
                   ),
+                  Container(
+                    padding: const EdgeInsets.only(
+                        top: 11, bottom: 11, left: 17, right: 17),
+
+                    height: 66,
+                    width: double.infinity,
+                    color: const Color.fromRGBO(
+                        15, 119, 240, 1),
+                    child: Row(
+
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+
+                          children:  const [
+                            Text('На голосовании:', textAlign: TextAlign.left, style: TextStyle(
+                              fontSize: 17.0,
+                              color: Colors.white,
+                            ),
+                            ),
+                            Text('1, 3', textAlign: TextAlign.right, style: TextStyle(
+                              fontSize: 17.0,
+                              color: Colors.white,
+                            ),
+                            ),
+                          ],
+                        ),
+                        IconButton(
+                          icon: const Icon(
+                            Icons.restart_alt,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+
+
+                          },
+                        ),
+                      ],
+
+                    ),
+                  ),
+                  const TimerPlayer(),
+
                 ],
               ),
             ),
