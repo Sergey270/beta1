@@ -59,7 +59,7 @@ class _TimerPlayerState extends State<TimerPlayer> {
   }
 
   void _calculationTime() {
-    var minuteStr = (_waitTime ~/ 60).toString().padLeft(2, '0');
+    var minuteStr = (_waitTime ~/ 60).toString();
     var secondStr = (_waitTime % 60).toString().padLeft(2, '0');
     setState(() {
       colorTime();
@@ -110,7 +110,7 @@ class _TimerPlayerState extends State<TimerPlayer> {
             timeStr,
             style: TextStyle(
               color: colorTimeText,
-              fontSize: 17,
+              fontSize: 22,
               fontWeight: FontWeight.w600,
             ),
           ),

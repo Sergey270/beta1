@@ -14,9 +14,11 @@ class Mafia extends StatefulWidget {
 
 class _MafiaState extends State<Mafia> {
   List<String> textNumber = ['👮‍♀', '🔴'];
-  bool hideRoles = true;
-  bool space = true;
-  bool deletePlayer = true;
+  late bool votingContainer;
+
+  late bool hideRoles;
+  late bool space;
+  late bool deletePlayer;
   late Color cleanColor;
   int fouls = 0;
   int voting = 0;
@@ -30,22 +32,12 @@ class _MafiaState extends State<Mafia> {
 
   List<String> nominatePlayers = [''];
 
-  void color() {
-    deletePlayer
-        ? cleanColor = Colors.black
-        : cleanColor = const Color(0x80181818);
-  }
-
-  void color2() {
-    deletePlayer
-        ? cleanColor = Colors.black
-        : cleanColor = const Color(0x80181818);
-  }
-
   @override
   void initState() {
     cleanColor = Colors.grey;
     textNumber = ['👮‍♀', '🔴'];
+    votingContainer =false;
+
     hideRoles = true;
     space = true;
     deletePlayer = true;
@@ -55,6 +47,12 @@ class _MafiaState extends State<Mafia> {
     deletePlayer2 = true;
     super.initState();
   }
+
+  void isVotingContainer (){
+    (space && space2) ? votingContainer =false: votingContainer =true;
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -114,8 +112,7 @@ class _MafiaState extends State<Mafia> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const MainScreenWidget()
-                    ),
+                        builder: (context) => const MainScreenWidget()),
                   );
                 },
               ),
@@ -185,7 +182,6 @@ class _MafiaState extends State<Mafia> {
                                         setState(() {
                                           space = true;
                                           deletePlayer = !deletePlayer;
-                                          // color();
                                         });
                                       },
                                       child: Text(
@@ -313,7 +309,10 @@ class _MafiaState extends State<Mafia> {
                                         onPressed: () {
                                           setState(() {
                                             space = !space;
-                                              space?  nominatePlayers.remove(' 1,'): nominatePlayers.add(' 1,');
+                                            space
+                                                ? nominatePlayers.remove(' 1,')
+                                                : nominatePlayers.add(' 1,');
+                                            isVotingContainer ();
                                           });
                                         },
                                         child: const Text(
@@ -425,7 +424,7 @@ class _MafiaState extends State<Mafia> {
                                 ? Colors.white
                                 : Colors.transparent,
                             borderRadius:
-                            const BorderRadius.all(Radius.circular(10)),
+                                const BorderRadius.all(Radius.circular(10)),
                           ),
                           height: 52,
                           width: double.infinity,
@@ -434,20 +433,20 @@ class _MafiaState extends State<Mafia> {
                               Expanded(
                                 child: Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
                                     hideRoles2
                                         ? Text(
-                                      textNumber[1],
-                                      style: TextStyle(
-                                        fontSize: 22.0,
-                                        color: deletePlayer2
-                                            ? cleanColor = Colors.black
-                                            : cleanColor =
-                                        const Color(0x66181818),
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    )
+                                            textNumber[1],
+                                            style: TextStyle(
+                                              fontSize: 22.0,
+                                              color: deletePlayer2
+                                                  ? cleanColor = Colors.black
+                                                  : cleanColor =
+                                                      const Color(0x66181818),
+                                              fontWeight: FontWeight.w700,
+                                            ),
+                                          )
                                         : const SizedBox(),
                                     Text(
                                       '2',
@@ -455,8 +454,8 @@ class _MafiaState extends State<Mafia> {
                                         color: deletePlayer2
                                             ? cleanColor = Colors.black
                                             : cleanColor = const Color(
-                                          0x80999999,
-                                        ),
+                                                0x80999999,
+                                              ),
                                         fontSize: 17.0,
                                         fontWeight: FontWeight.w700,
                                       ),
@@ -472,7 +471,6 @@ class _MafiaState extends State<Mafia> {
                                         setState(() {
                                           space2 = true;
                                           deletePlayer2 = !deletePlayer2;
-                                          // color();
                                         });
                                       },
                                       child: Text(
@@ -482,7 +480,7 @@ class _MafiaState extends State<Mafia> {
                                           color: deletePlayer2
                                               ? cleanColor2 = Colors.red
                                               : cleanColor2 =
-                                          const Color(0x80999999),
+                                                  const Color(0x80999999),
                                           fontWeight: FontWeight.w700,
                                         ),
                                       ),
@@ -492,255 +490,263 @@ class _MafiaState extends State<Mafia> {
                               ),
                               space2
                                   ? const Expanded(
-                                child: SizedBox(),
-                              )
+                                      child: SizedBox(),
+                                    )
                                   : const SizedBox(),
                               Expanded(
                                 child: SizedBox(
                                   child: deletePlayer2
                                       ? Row(
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      const SizedBox(
-                                        width: 0,
-                                        child: VerticalDivider(
-                                          thickness: 1,
-                                          indent: 11,
-                                          endIndent: 11,
-                                          color: Colors.grey,
-                                        ),
-                                      ),
-                                      TextButton(
-                                        style: TextButton.styleFrom(
-                                          minimumSize: const Size(
-                                            1.0,
-                                            1.0,
-                                          ),
-                                        ),
-                                        onPressed: () {
-                                          setState(() {
-                                            if (fouls2 > 0) {
-                                              fouls2--;
-                                            }
-                                          });
-                                        },
-                                        child: const Text(
-                                          '-',
-                                          style: TextStyle(
-                                            fontSize: 17.0,
-                                            color: Color.fromRGBO(
-                                                15, 119, 240, 1),
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        '$fouls2',
-                                        style: const TextStyle(
-                                          fontSize: 17.0,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                      TextButton(
-                                        style: TextButton.styleFrom(
-                                          minimumSize: const Size(
-                                            1.0,
-                                            1.0,
-                                          ),
-                                        ),
-                                        onPressed: () {
-                                          setState(() {
-                                            if (fouls2 < 4) {
-                                              fouls2++;
-                                            }
-                                          });
-                                        },
-                                        child: const Text(
-                                          '+',
-                                          style: TextStyle(
-                                            fontSize: 17.0,
-                                            color: Color.fromRGBO(
-                                                15, 119, 240, 1),
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                        ),
-                                      ),
-                                      space2
-                                          ? const SizedBox(
-                                        width: 0,
-                                        child: VerticalDivider(
-                                          thickness: 1,
-                                          indent: 11,
-                                          endIndent: 11,
-                                          color: Colors.grey,
-                                        ),
-                                      )
-                                          : const SizedBox(),
-                                    ],
-                                  )
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            const SizedBox(
+                                              width: 0,
+                                              child: VerticalDivider(
+                                                thickness: 1,
+                                                indent: 11,
+                                                endIndent: 11,
+                                                color: Colors.grey,
+                                              ),
+                                            ),
+                                            TextButton(
+                                              style: TextButton.styleFrom(
+                                                minimumSize: const Size(
+                                                  1.0,
+                                                  1.0,
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                setState(() {
+                                                  if (fouls2 > 0) {
+                                                    fouls2--;
+                                                  }
+                                                });
+                                              },
+                                              child: const Text(
+                                                '-',
+                                                style: TextStyle(
+                                                  fontSize: 17.0,
+                                                  color: Color.fromRGBO(
+                                                      15, 119, 240, 1),
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                              ),
+                                            ),
+                                            Text(
+                                              '$fouls2',
+                                              style: const TextStyle(
+                                                fontSize: 17.0,
+                                                color: Colors.black,
+                                              ),
+                                            ),
+                                            TextButton(
+                                              style: TextButton.styleFrom(
+                                                minimumSize: const Size(
+                                                  1.0,
+                                                  1.0,
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                setState(() {
+                                                  if (fouls2 < 4) {
+                                                    fouls2++;
+                                                  }
+                                                });
+                                              },
+                                              child: const Text(
+                                                '+',
+                                                style: TextStyle(
+                                                  fontSize: 17.0,
+                                                  color: Color.fromRGBO(
+                                                      15, 119, 240, 1),
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                              ),
+                                            ),
+                                            space2
+                                                ? const SizedBox(
+                                                    width: 0,
+                                                    child: VerticalDivider(
+                                                      thickness: 1,
+                                                      indent: 11,
+                                                      endIndent: 11,
+                                                      color: Colors.grey,
+                                                    ),
+                                                  )
+                                                : const SizedBox(),
+                                          ],
+                                        )
                                       : const SizedBox(),
                                 ),
                               ),
                               deletePlayer2
                                   ? Container(
-                                width: 40,
-                                color: space2
-                                    ? Colors.transparent
-                                    : const Color.fromRGBO(
-                                    15, 119, 240, 1),
-                                height: double.infinity,
-                                child: TextButton(
-                                  style: TextButton.styleFrom(
-                                    minimumSize: const Size(
-                                      1.0,
-                                      1.0,
-                                    ),
-                                  ),
-                                  onPressed: () {
-                                    setState(() {
-                                      space2 = !space2;
-                                      space2?  nominatePlayers.remove(' 2,'): nominatePlayers.add(' 2,');
-                                    });
-                                  },
-                                  child: const Text(
-                                    '👍',
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                      fontSize: 22.0,
-                                      color:
-                                      Color.fromRGBO(15, 119, 240, 1),
-                                    ),
-                                  ),
-                                ),
-                              )
+                                      width: 40,
+                                      color: space2
+                                          ? Colors.transparent
+                                          : const Color.fromRGBO(
+                                              15, 119, 240, 1),
+                                      height: double.infinity,
+                                      child: TextButton(
+                                        style: TextButton.styleFrom(
+                                          minimumSize: const Size(
+                                            1.0,
+                                            1.0,
+                                          ),
+                                        ),
+                                        onPressed: () {
+                                          setState(() {
+                                            space2 = !space2;
+                                            space2
+                                                ? nominatePlayers.remove(' 2,')
+                                                : nominatePlayers.add(' 2,');
+                                            isVotingContainer ();
+                                          });
+                                        },
+                                        child: const Text(
+                                          '👍',
+                                          textAlign: TextAlign.left,
+                                          style: TextStyle(
+                                            fontSize: 22.0,
+                                            color:
+                                                Color.fromRGBO(15, 119, 240, 1),
+                                          ),
+                                        ),
+                                      ),
+                                    )
                                   : const SizedBox(
-                                width: 40,
-                              ),
+                                      width: 40,
+                                    ),
                               space2
                                   ? const SizedBox()
                                   : Expanded(
-                                child: Container(
-                                  color: space2
-                                      ? Colors.transparent
-                                      : const Color.fromRGBO(
-                                      15, 119, 240, 1),
-                                  child: Row(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment:
-                                        MainAxisAlignment
-                                            .spaceBetween,
-                                        children: [
-                                          const SizedBox(
-                                            width: 0,
-                                            child: VerticalDivider(
-                                              // width: 20,
-                                              thickness: 1,
-                                              indent: 11,
-                                              endIndent: 11,
-                                              color: Colors.white,
+                                      child: Container(
+                                        color: space2
+                                            ? Colors.transparent
+                                            : const Color.fromRGBO(
+                                                15, 119, 240, 1),
+                                        child: Row(
+                                          children: [
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                const SizedBox(
+                                                  width: 0,
+                                                  child: VerticalDivider(
+                                                    // width: 20,
+                                                    thickness: 1,
+                                                    indent: 11,
+                                                    endIndent: 11,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                                TextButton(
+                                                  style: TextButton.styleFrom(
+                                                    minimumSize: const Size(
+                                                      1.0,
+                                                      1.0,
+                                                    ),
+                                                  ),
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      if (voting2 > 0) {
+                                                        voting2--;
+                                                      }
+                                                    });
+                                                  },
+                                                  child: const Text(
+                                                    '-',
+                                                    style: TextStyle(
+                                                      fontSize: 17.0,
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Text(
+                                                  '$voting2',
+                                                  style: const TextStyle(
+                                                    fontSize: 17.0,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                                TextButton(
+                                                  style: TextButton.styleFrom(
+                                                    minimumSize: const Size(
+                                                      1.0,
+                                                      1.0,
+                                                    ),
+                                                  ),
+                                                  onPressed: () {
+                                                    setState(() {
+                                                      if (voting2 < 9) {
+                                                        voting2++;
+                                                      }
+                                                    });
+                                                  },
+                                                  child: const Text(
+                                                    '+',
+                                                    style: TextStyle(
+                                                      fontSize: 17.0,
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
-                                          ),
-                                          TextButton(
-                                            style: TextButton.styleFrom(
-                                              minimumSize: const Size(
-                                                1.0,
-                                                1.0,
-                                              ),
-                                            ),
-                                            onPressed: () {
-                                              setState(() {
-                                                if (voting2 > 0) {
-                                                  voting2--;
-                                                }
-                                              });
-                                            },
-                                            child: const Text(
-                                              '-',
-                                              style: TextStyle(
-                                                fontSize: 17.0,
-                                                color: Colors.white,
-                                                fontWeight:
-                                                FontWeight.w600,
-                                              ),
-                                            ),
-                                          ),
-                                          Text(
-                                            '$voting2',
-                                            style: const TextStyle(
-                                              fontSize: 17.0,
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                          TextButton(
-                                            style: TextButton.styleFrom(
-                                              minimumSize: const Size(
-                                                1.0,
-                                                1.0,
-                                              ),
-                                            ),
-                                            onPressed: () {
-                                              setState(() {
-                                                if (voting2 < 9) {
-                                                  voting2++;
-                                                }
-                                              });
-                                            },
-                                            child: const Text(
-                                              '+',
-                                              style: TextStyle(
-                                                fontSize: 17.0,
-                                                color: Colors.white,
-                                                fontWeight:
-                                                FontWeight.w600,
-                                              ),
-                                            ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
                                       ),
-                                    ],
-                                  ),
-                                ),
-                              ),
+                                    ),
                             ],
                           ),
                         ),
                       ],
                     ),
                   ),
+                  votingContainer?
                   Container(
                     padding: const EdgeInsets.only(
                         top: 11, bottom: 11, left: 17, right: 17),
-
                     height: 66,
                     width: double.infinity,
-                    color: const Color.fromRGBO(
-                        15, 119, 240, 1),
+                    color: const Color.fromRGBO(15, 119, 240, 1),
                     child: Row(
-
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-
-                          children:   [
-                            const Text('На голосовании:', textAlign: TextAlign.left, style: TextStyle(
-                              fontSize: 17.0,
-                              color: Colors.white,
-                            ),
+                          children: [
+                            const Text(
+                              'На голосовании:',
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                fontSize: 17.0,
+                                color: Colors.white,
+                              ),
                             ),
                             Row(
                                 children: nominatePlayers
-                                    .map((element) =>  Column(
-                                    children: [
-                                      Text(element, style: const TextStyle(color: Colors.white, fontSize: 17,),)
-                                    ],
-                                  ),
-                                )
+                                    .map(
+                                      (element) => Column(
+                                        children: [
+                                          Text(
+                                            element,
+                                            style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 17,
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    )
                                     .toList()),
-
-
                           ],
                         ),
                         IconButton(
@@ -751,21 +757,21 @@ class _MafiaState extends State<Mafia> {
                           onPressed: () {
                             setState(() {
                               nominatePlayers.clear();
+                              votingContainer =false;
                               space = true;
                               voting = 0;
                               space2 = true;
                               voting2 = 0;
                             });
-
-
                           },
                         ),
                       ],
-
                     ),
-                  ),
+                  ):
+                      const SizedBox(
+                        height: 66,
+                      ),
                   const TimerPlayer(),
-
                 ],
               ),
             ),
