@@ -1,7 +1,4 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-
 import 'main_screen_widget.dart';
 import 'timer.dart';
 

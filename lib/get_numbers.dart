@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'main_screen_widget.dart';
 
 class GetNumbers extends StatefulWidget {
@@ -23,9 +22,9 @@ class _GetNumbersState extends State<GetNumbers> {
 
   int indexNumber = 0;
   int indexNumber2 = 0;
-  int count = 10;
-  int count2 = 10;
-  // var _selestIndex = 0;
+  int countFreePlace = 10;
+  int countWantPlay = 10;
+
 
   int check = 0;
 
@@ -50,43 +49,43 @@ class _GetNumbersState extends State<GetNumbers> {
 
       indexNumber++;
 
-      count--;
-      count2--;
+      countFreePlace--;
+      countWantPlay--;
     } else if (indexNumber > 0 &&
         indexNumber < (textNumber.length - 1) &&
         (textNumber[indexNumber] != 'X') &&
         textNumber[indexNumber + 1] == 'X') {
       indexNumber++;
       indexNumber2++;
-      count2--;
+      countWantPlay--;
     } else if (indexNumber > 0 &&
         indexNumber < (textNumber.length - 1) &&
         (textNumber[indexNumber] != 'X') &&
         textNumber[indexNumber + 1] != 'X') {
       indexNumber++;
       indexNumber2++;
-      count--;
-      count2--;
+      countFreePlace--;
+      countWantPlay--;
     } else if (indexNumber > 0 &&
         indexNumber < (textNumber.length - 1) &&
         (textNumber[indexNumber] == 'X') &&
         (textNumber[indexNumber + 1] != 'X')) {
       indexNumber++;
       indexNumber2++;
-      count--;
-      count2--;
+      countFreePlace--;
+      countWantPlay--;
     } else if (indexNumber > 0 &&
         indexNumber < (textNumber.length - 1) &&
         (textNumber[indexNumber] == 'X') &&
         (textNumber[indexNumber + 1] == 'X')) {
       indexNumber++;
       indexNumber2++;
-      count2--;
+      countWantPlay--;
     } else if (indexNumber == (textNumber.length - 1)) {
       indexNumber = 0;
       indexNumber2 = 0;
-      count = 10;
-      count2 = 10;
+      countFreePlace = 10;
+      countWantPlay = 10;
       textNumber = [
         '',
         '1 ',
@@ -124,8 +123,8 @@ class _GetNumbersState extends State<GetNumbers> {
         indexNumber2 = 0;
 
         indexNumber = 1;
-        count2 = maxSeats;
-        check = count2;
+        countWantPlay = maxSeats;
+        check = countWantPlay;
       }
     }
   }
@@ -155,7 +154,7 @@ class _GetNumbersState extends State<GetNumbers> {
   }
 
   void control() {
-    _getMaxSeats = TextEditingController(text: count2.toString());
+    _getMaxSeats = TextEditingController(text: countWantPlay.toString());
   }
 
   void numberColor() {
@@ -173,14 +172,6 @@ class _GetNumbersState extends State<GetNumbers> {
       _numberColor2 = Colors.black;
     }
   }
-
-  // void onSelectTap(int index) {
-  //   setState(() {
-  //     if (_selestIndex == index) return;
-  //     _selestIndex = index;
-  //
-  //   });
-  // }
 
   @override
   void initState() {
@@ -204,7 +195,7 @@ class _GetNumbersState extends State<GetNumbers> {
     SystemChannels.textInput.invokeMethod('TextInput.hide');
 
     super.initState();
-    _getMaxSeats = TextEditingController(text: count2.toString());
+    _getMaxSeats = TextEditingController(text: countWantPlay.toString());
   }
 
   @override
@@ -219,7 +210,6 @@ class _GetNumbersState extends State<GetNumbers> {
           resizeToAvoidBottomInset: false,
           backgroundColor: const Color(0xFFF3F6F9),
           appBar: AppBar(
-
             centerTitle: true,
             backgroundColor: Colors.white,
             title: const Text(
@@ -262,7 +252,6 @@ class _GetNumbersState extends State<GetNumbers> {
                         child: Column(
                           children: [
                             Row(
-                              //  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Expanded(
                                   child: Container(
@@ -363,7 +352,7 @@ class _GetNumbersState extends State<GetNumbers> {
                                     ),
                                   ),
                                   Text(
-                                    '$count  ',
+                                    '$countFreePlace  ',
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
                                       fontSize: 17.0,
@@ -396,9 +385,7 @@ class _GetNumbersState extends State<GetNumbers> {
                                   ),
                                   SizedBox(
                                     width: 36.0,
-                                    //height: 60.0,
-
-                                    child: TextFormField(
+                                   child: TextFormField(
                                       decoration: const InputDecoration(
                                         border: InputBorder.none,
                                       ),
@@ -418,8 +405,6 @@ class _GetNumbersState extends State<GetNumbers> {
                                 ],
                               ),
                             ),
-
-                            //  const Padding(padding: EdgeInsets.only( bottom:  50)),
                           ],
                         ),
                       ),
@@ -433,7 +418,6 @@ class _GetNumbersState extends State<GetNumbers> {
                       child: Container(
                         height: 60,
                         width: double.infinity,
-                        // color: Colors.cyan,
                         decoration: const BoxDecoration(
                           color: Color.fromRGBO(15, 119, 240, 1),
                           borderRadius: BorderRadius.all(Radius.circular(32)),

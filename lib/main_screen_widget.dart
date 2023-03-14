@@ -19,9 +19,6 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
     });
   }
 
-
-
-
   @override
   Widget build(BuildContext context) {
     SystemChannels.textInput.invokeMethod('TextInput.hide');

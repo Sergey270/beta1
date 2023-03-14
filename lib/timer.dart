@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 class TimerPlayer extends StatefulWidget {
@@ -16,8 +15,6 @@ class _TimerPlayerState extends State<TimerPlayer> {
   late Color colorTimeText;
   late var timeStr = '';
   late int _waitTime;
-
-  // int waitTime = 0;
 
   @override
   void initState() {
