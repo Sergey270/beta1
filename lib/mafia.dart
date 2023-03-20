@@ -195,7 +195,7 @@ class _MafiaState extends State<Mafia> {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(
-                      top: 12, bottom: 0, left: 12, right: 12),
+                      top: 8, bottom: 0, left: 12, right: 12),
                   child: Column(
                     children: [
                       Container(
@@ -205,7 +205,7 @@ class _MafiaState extends State<Mafia> {
                           borderRadius:
                               const BorderRadius.all(Radius.circular(10)),
                         ),
-                        height: 52,
+                        height: 48,
                         width: double.infinity,
                         child: Row(
                           children: [
@@ -490,7 +490,7 @@ class _MafiaState extends State<Mafia> {
                               const BorderRadius.all(Radius.circular(10)),
                         ),
                         margin: const EdgeInsets.only(top: 2),
-                        height: 52,
+                        height: 48,
                         width: double.infinity,
                         child: Row(
                           children: [
@@ -775,7 +775,7 @@ class _MafiaState extends State<Mafia> {
                               const BorderRadius.all(Radius.circular(10)),
                         ),
                         margin: const EdgeInsets.only(top: 2),
-                        height: 52,
+                        height: 48,
                         width: double.infinity,
                         child: Row(
                           children: [
@@ -1060,7 +1060,7 @@ class _MafiaState extends State<Mafia> {
                               const BorderRadius.all(Radius.circular(10)),
                         ),
                         margin: const EdgeInsets.only(top: 2),
-                        height: 52,
+                        height: 48,
                         width: double.infinity,
                         child: Row(
                           children: [
@@ -1345,7 +1345,7 @@ class _MafiaState extends State<Mafia> {
                               const BorderRadius.all(Radius.circular(10)),
                         ),
                         margin: const EdgeInsets.only(top: 2),
-                        height: 52,
+                        height: 48,
                         width: double.infinity,
                         child: Row(
                           children: [
@@ -1630,7 +1630,7 @@ class _MafiaState extends State<Mafia> {
                               const BorderRadius.all(Radius.circular(10)),
                         ),
                         margin: const EdgeInsets.only(top: 2),
-                        height: 52,
+                        height: 48,
                         width: double.infinity,
                         child: Row(
                           children: [
@@ -1915,7 +1915,7 @@ class _MafiaState extends State<Mafia> {
                               const BorderRadius.all(Radius.circular(10)),
                         ),
                         margin: const EdgeInsets.only(top: 2),
-                        height: 52,
+                        height: 48,
                         width: double.infinity,
                         child: Row(
                           children: [
@@ -2200,7 +2200,7 @@ class _MafiaState extends State<Mafia> {
                               const BorderRadius.all(Radius.circular(10)),
                         ),
                         margin: const EdgeInsets.only(top: 2),
-                        height: 52,
+                        height: 48,
                         width: double.infinity,
                         child: Row(
                           children: [
@@ -2485,7 +2485,7 @@ class _MafiaState extends State<Mafia> {
                               const BorderRadius.all(Radius.circular(10)),
                         ),
                         margin: const EdgeInsets.only(top: 2),
-                        height: 52,
+                        height: 48,
                         width: double.infinity,
                         child: Row(
                           children: [
@@ -2771,7 +2771,7 @@ class _MafiaState extends State<Mafia> {
                               const BorderRadius.all(Radius.circular(10)),
                         ),
                         margin: const EdgeInsets.only(top: 2),
-                        height: 52,
+                        height: 48,
                         width: double.infinity,
                         child: Row(
                           children: [
@@ -3055,7 +3055,7 @@ class _MafiaState extends State<Mafia> {
                     ? Container(
                         padding: const EdgeInsets.only(
                             top: 11, bottom: 11, left: 17, right: 17),
-                        height: 66,
+                        height: 62,
                         width: double.infinity,
                         color: const Color.fromRGBO(15, 119, 240, 1),
                         child: Row(
