@@ -26,7 +26,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-      //  backgroundColor: const Color(0xF7F8F8FF),
+        //  backgroundColor: const Color(0xF7F8F8FF),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _selectIndex,
           onTap: onSelectTap,
@@ -35,13 +35,11 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
               icon: Icon(Icons.numbers),
               label: 'Раздача номеров',
             ),
-
             BottomNavigationBarItem(
               icon: Icon(Icons.manage_accounts),
               label: 'Ведение игры',
             ),
           ],
-
           selectedItemColor: const Color.fromRGBO(15, 119, 240, 1),
         ),
         body: IndexedStack(
@@ -49,7 +47,6 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
           children: const [
             GetNumbers(),
             Mafia(),
-
           ],
         ),
       ),

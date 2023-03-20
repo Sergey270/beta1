@@ -25,7 +25,6 @@ class _GetNumbersState extends State<GetNumbers> {
   int countFreePlace = 10;
   int countWantPlay = 10;
 
-
   int check = 0;
 
   int maxSeats = 0;
@@ -226,7 +225,7 @@ class _GetNumbersState extends State<GetNumbers> {
                 icon: const Icon(
                   Icons.restart_alt,
                   color: Color.fromRGBO(15, 119, 240, 1),
-                 ),
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -385,7 +384,7 @@ class _GetNumbersState extends State<GetNumbers> {
                                   ),
                                   SizedBox(
                                     width: 36.0,
-                                   child: TextFormField(
+                                    child: TextFormField(
                                       decoration: const InputDecoration(
                                         border: InputBorder.none,
                                       ),
