@@ -321,9 +321,7 @@ class _GetNumbersState extends State<GetNumbers> {
                                 Expanded(
                                   child: Container(
                                     height: 144,
-                                    // width: double.infinity,
-                                    // color: Colors.cyan,
-                                    margin: EdgeInsets.only(left: 14.0),
+                                    margin: const EdgeInsets.only(left: 14.0),
                                   ),
                                 ),
                               ],
