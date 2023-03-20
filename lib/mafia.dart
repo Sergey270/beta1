@@ -3053,6 +3053,7 @@ class _MafiaState extends State<Mafia> {
                 ),
                 votingContainer
                     ? Container(
+                        margin: const EdgeInsets.only(top: 2),
                         padding: const EdgeInsets.only(
                             top: 11, bottom: 11, left: 17, right: 17),
                         height: 62,
