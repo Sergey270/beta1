@@ -134,11 +134,7 @@ class _MafiaState extends State<Mafia> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GestureDetector(
-        onTap: () {
-          FocusManager.instance.primaryFocus?.unfocus();
-        },
-        child: Scaffold(
+      home:  Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor: const Color(0xFFF3F6F9),
           appBar: AppBar(
@@ -3190,7 +3186,6 @@ class _MafiaState extends State<Mafia> {
             ),
           ),
         ),
-      ),
     );
   }
 }
