@@ -232,7 +232,7 @@ class _MafiaState extends State<Mafia> {
                                           ),
                                         )
                                       : const SizedBox(
-                                          width: 28,
+                                          width: 26,
                                         ),
                                   Container(
                                     alignment: Alignment.center,
