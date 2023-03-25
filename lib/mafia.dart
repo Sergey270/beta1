@@ -10,7 +10,7 @@ class Mafia extends StatefulWidget {
 }
 
 class _MafiaState extends State<Mafia> {
-  List<String> textNumber = ['👮‍♀', '🔴'];
+  List<String> textNumber = [];
   List<String> nominatePlayers = [''];
   late bool votingContainer;
 
@@ -218,7 +218,7 @@ class _MafiaState extends State<Mafia> {
                                   hideRoles
                                       ? Container(
                                           alignment: Alignment.center,
-                                          width: 26,
+                                          width: 28,
                                           child: Text(
                                             textNumber[0],
                                             style: TextStyle(
@@ -232,7 +232,7 @@ class _MafiaState extends State<Mafia> {
                                           ),
                                         )
                                       : const SizedBox(
-                                          width: 26,
+                                          width: 28,
                                         ),
                                   Container(
                                     alignment: Alignment.center,
@@ -250,8 +250,9 @@ class _MafiaState extends State<Mafia> {
                                       ),
                                     ),
                                   ),
-                                  SizedBox(
-                                    width: 26,
+                                  Container(
+                                    alignment: Alignment.center,
+                                    width: 28,
                                     child: TextButton(
                                       style: TextButton.styleFrom(
                                         minimumSize: const Size(
