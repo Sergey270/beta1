@@ -218,7 +218,7 @@ class _MafiaState extends State<Mafia> {
                                   hideRoles
                                       ? Container(
                                           alignment: Alignment.center,
-                                          width: 28,
+                                          width: 26,
                                           child: Text(
                                             textNumber[0],
                                             style: TextStyle(
@@ -236,7 +236,7 @@ class _MafiaState extends State<Mafia> {
                                         ),
                                   Container(
                                     alignment: Alignment.center,
-                                    width: 24,
+                                    width: 20,
                                     child: Text(
                                       '1',
                                       style: TextStyle(
@@ -250,9 +250,8 @@ class _MafiaState extends State<Mafia> {
                                       ),
                                     ),
                                   ),
-                                  Container(
-                                    alignment: Alignment.center,
-                                    width: 28,
+                                  SizedBox(
+                                    width: 36,
                                     child: TextButton(
                                       style: TextButton.styleFrom(
                                         minimumSize: const Size(
