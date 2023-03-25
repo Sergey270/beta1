@@ -237,12 +237,12 @@ class _GetNumbersState extends State<GetNumbers> {
           ),
           body: SafeArea(
             child: Center(
-              child: Stack(
+              child: ListView(
+                padding: EdgeInsets.zero,
+                keyboardDismissBehavior:
+                    ScrollViewKeyboardDismissBehavior.onDrag,
                 children: [
-                  ListView(
-                    padding: EdgeInsets.zero,
-                    keyboardDismissBehavior:
-                        ScrollViewKeyboardDismissBehavior.onDrag,
+                  Stack(
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(
@@ -263,12 +263,12 @@ class _GetNumbersState extends State<GetNumbers> {
                                     child: Column(
                                       children: [
                                         const Padding(
-                                            padding: EdgeInsets.all(8)),
+                                            padding: EdgeInsets.all(18)),
                                         Text(textNumber[indexNumber2],
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: _numberColor2,
-                                              fontSize: 70.0,
+                                              fontSize: 50.0,
                                               fontWeight: FontWeight.w700,
                                             ),
                                             overflow: TextOverflow.ellipsis),
@@ -400,42 +400,43 @@ class _GetNumbersState extends State<GetNumbers> {
                           ],
                         ),
                       ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        bottom: 24.0, left: 14, right: 14),
-                    child: Align(
-                      alignment: FractionalOffset.bottomCenter,
-                      child: Container(
-                        height: 60,
-                        width: double.infinity,
-                        decoration: const BoxDecoration(
-                          color: Color.fromRGBO(15, 119, 240, 1),
-                          borderRadius: BorderRadius.all(Radius.circular(32)),
-                        ),
-                        child: TextButton(
-                          onPressed: () {
-                            setState(() {
-                              _getList();
-                              _gerRandomNumber();
-                              _colorBox();
-                              control();
-                              numberColor();
-                              numberColor2();
-                            });
-                          },
-                          child: const Text(
-                            'Получить номер',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.w600,
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 555, bottom: 24.0, left: 14, right: 14),
+                        child: Align(
+                          alignment: FractionalOffset.bottomCenter,
+                          child: Container(
+                            height: 56,
+                            width: double.infinity,
+                            decoration: const BoxDecoration(
+                              color: Color.fromRGBO(15, 119, 240, 1),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20)),
+                            ),
+                            child: TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  _getList();
+                                  _gerRandomNumber();
+                                  _colorBox();
+                                  control();
+                                  numberColor();
+                                  numberColor2();
+                                });
+                              },
+                              child: const Text(
+                                'Получить номер',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 17.0,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                    ),
+                    ],
                   ),
                 ],
               ),

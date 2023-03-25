@@ -140,6 +140,7 @@ class _MafiaState extends State<Mafia> {
         appBar: AppBar(
           centerTitle: true,
           backgroundColor: Colors.white,
+           leadingWidth: 64,
           leading: hideRoles
               ? IconButton(
                   icon: const Icon(
@@ -163,6 +164,7 @@ class _MafiaState extends State<Mafia> {
                     });
                   },
                 ),
+
           title: const Text(
             'Ведение игры',
             style: TextStyle(
@@ -171,8 +173,9 @@ class _MafiaState extends State<Mafia> {
               fontWeight: FontWeight.w600,
             ),
           ),
+
           elevation: 0,
-          actions: [
+           actions: [
             IconButton(
               icon: const Icon(
                 Icons.restart_alt,
