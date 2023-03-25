@@ -134,14 +134,13 @@ class _GetNumbersState extends State<GetNumbers> {
 
       if (indexNumber > 1) {
         _containerColor = Colors.white;
-        textContainer = const Text(
-          'Предыдущий \n номер',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 11.0,
-          ),
-        );
+        textContainer = const Text('Предыдущий \n номер',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 11.0,
+            ),
+            overflow: TextOverflow.ellipsis);
       } else {
         _containerColor = Colors.transparent;
         textContainer = const Text('');
@@ -265,20 +264,16 @@ class _GetNumbersState extends State<GetNumbers> {
                                       children: [
                                         const Padding(
                                             padding: EdgeInsets.all(8)),
-
-                                        // const Padding(padding: EdgeInsets.all(5)),
-                                        Text(
-                                          textNumber[indexNumber2],
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: _numberColor2,
-                                            fontSize: 70.0,
-                                            fontWeight: FontWeight.w700,
-                                          ),
-                                        ),
+                                        Text(textNumber[indexNumber2],
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: _numberColor2,
+                                              fontSize: 70.0,
+                                              fontWeight: FontWeight.w700,
+                                            ),
+                                            overflow: TextOverflow.ellipsis),
                                         const Padding(
                                             padding: EdgeInsets.all(4)),
-
                                         textContainer,
                                       ],
                                     ),
