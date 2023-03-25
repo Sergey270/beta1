@@ -303,7 +303,7 @@ class _MafiaState extends State<Mafia> {
                                             ),
                                           ),
                                           SizedBox(
-                                            width: 26,
+                                            width: 28,
                                             child: TextButton(
                                               style: TextButton.styleFrom(
                                                 minimumSize: const Size(
@@ -341,7 +341,7 @@ class _MafiaState extends State<Mafia> {
                                             ),
                                           ),
                                           SizedBox(
-                                            width: 26,
+                                            width: 28,
                                             child: TextButton(
                                               style: TextButton.styleFrom(
                                                 minimumSize: const Size(
@@ -442,7 +442,7 @@ class _MafiaState extends State<Mafia> {
                                             ),
                                           ),
                                           SizedBox(
-                                            width: 26,
+                                            width: 28,
                                             child: TextButton(
                                               style: TextButton.styleFrom(
                                                 minimumSize: const Size(
@@ -479,7 +479,7 @@ class _MafiaState extends State<Mafia> {
                                             ),
                                           ),
                                           SizedBox(
-                                            width: 26,
+                                            width: 28,
                                             child: TextButton(
                                               style: TextButton.styleFrom(
                                                 minimumSize: const Size(
