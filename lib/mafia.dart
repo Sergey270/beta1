@@ -237,7 +237,7 @@ class _MafiaState extends State<Mafia> {
                                         ),
                                   Container(
                                     alignment: Alignment.center,
-                                    width: 20,
+                                    width: 22,
                                     child: Text(
                                       '1',
                                       style: TextStyle(
@@ -553,7 +553,7 @@ class _MafiaState extends State<Mafia> {
                                         ),
                                   Container(
                                     alignment: Alignment.center,
-                                    width: 20,
+                                    width: 22,
                                     child: Text(
                                       '2',
                                       style: TextStyle(
@@ -869,7 +869,7 @@ class _MafiaState extends State<Mafia> {
                                         ),
                                   Container(
                                     alignment: Alignment.center,
-                                    width: 20,
+                                    width: 22,
                                     child: Text(
                                       '3',
                                       style: TextStyle(
@@ -1185,7 +1185,7 @@ class _MafiaState extends State<Mafia> {
                                         ),
                                   Container(
                                     alignment: Alignment.center,
-                                    width: 20,
+                                    width: 22,
                                     child: Text(
                                       '4',
                                       style: TextStyle(
@@ -1501,7 +1501,7 @@ class _MafiaState extends State<Mafia> {
                                         ),
                                   Container(
                                     alignment: Alignment.center,
-                                    width: 20,
+                                    width: 22,
                                     child: Text(
                                       '5',
                                       style: TextStyle(
@@ -1817,7 +1817,7 @@ class _MafiaState extends State<Mafia> {
                                         ),
                                   Container(
                                     alignment: Alignment.center,
-                                    width: 20,
+                                    width: 22,
                                     child: Text(
                                       '6',
                                       style: TextStyle(
@@ -2133,7 +2133,7 @@ class _MafiaState extends State<Mafia> {
                                         ),
                                   Container(
                                     alignment: Alignment.center,
-                                    width: 20,
+                                    width: 22,
                                     child: Text(
                                       '7',
                                       style: TextStyle(
@@ -2449,7 +2449,7 @@ class _MafiaState extends State<Mafia> {
                                         ),
                                   Container(
                                     alignment: Alignment.center,
-                                    width: 20,
+                                    width: 22,
                                     child: Text(
                                       '8',
                                       style: TextStyle(
@@ -2765,7 +2765,7 @@ class _MafiaState extends State<Mafia> {
                                         ),
                                   Container(
                                     alignment: Alignment.center,
-                                    width: 20,
+                                    width: 22,
                                     child: Text(
                                       '9',
                                       style: TextStyle(
@@ -3082,7 +3082,7 @@ class _MafiaState extends State<Mafia> {
                                         ),
                                   Container(
                                     alignment: Alignment.center,
-                                    width: 20,
+                                    width: 22,
                                     child: Text(
                                       '10',
                                       style: TextStyle(
