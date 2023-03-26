@@ -239,6 +239,8 @@ class _GetNumbersState extends State<GetNumbers> {
             child: Center(
               child: ListView(
                 padding: EdgeInsets.zero,
+
+                //Hide keyboard on scroll in Flutter
                 keyboardDismissBehavior:
                     ScrollViewKeyboardDismissBehavior.onDrag,
                 children: [
@@ -402,7 +404,7 @@ class _GetNumbersState extends State<GetNumbers> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
-                            top: 555, bottom: 24.0, left: 14, right: 14),
+                            top: 0, bottom: 24.0, left: 14, right: 14),
                         child: Align(
                           alignment: FractionalOffset.bottomCenter,
                           child: Container(
