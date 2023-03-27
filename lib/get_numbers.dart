@@ -235,225 +235,216 @@ class _GetNumbersState extends State<GetNumbers> {
               ),
             ],
           ),
-          body: SafeArea(
-            child: Center(
-              child: ListView(
-                padding: EdgeInsets.zero,
+          body: Center(
+            child: ListView(
+              padding: EdgeInsets.zero,
 
-                //Hide keyboard on scroll in Flutter
-                keyboardDismissBehavior:
-                    ScrollViewKeyboardDismissBehavior.onDrag,
-                children: [
-                  Stack(
-                    children: [
-                      Column(
-                        children: [
-                          SizedBox(
-                            height: MediaQuery.of(context).size.height -
-                                AppBar().preferredSize.height -
-                                MediaQuery.of(context).padding.top -
-                                MediaQuery.of(context).padding.bottom -
-                                kBottomNavigationBarHeight - 80,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                top: 0, bottom: 0, left: 14, right: 14),
-                            child: Align(
-                              alignment: FractionalOffset.bottomCenter,
-                              child: Container(
-                                height: 56,
-                                width: double.infinity,
-                                decoration: const BoxDecoration(
-                                  color: Color.fromRGBO(15, 119, 240, 1),
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(20)),
-                                ),
-                                child: TextButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      _getList();
-                                      _gerRandomNumber();
-                                      _colorBox();
-                                      control();
-                                      numberColor();
-                                      numberColor2();
-                                    });
-                                  },
-                                  child: const Text(
-                                    'Получить номер',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 17.0,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+              //Hide keyboard on scroll in Flutter
+              keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+              children: [
+                Stack(
+                  children: [
+                    Column(
+                      children: [
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height -
+                              MediaQuery.of(context).viewPadding.top -
+                              AppBar().preferredSize.height -
+                              MediaQuery.of(context).padding.top -
+                              kToolbarHeight -
+                              80,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 0, bottom: 0, left: 14, right: 14),
+                          child: Align(
+                            alignment: FractionalOffset.bottomCenter,
+                            child: Container(
+                              height: 56,
+                              width: double.infinity,
+                              decoration: const BoxDecoration(
+                                color: Color.fromRGBO(15, 119, 240, 1),
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(20)),
+                              ),
+                              child: TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    _getList();
+                                    _gerRandomNumber();
+                                    _colorBox();
+                                    control();
+                                    numberColor();
+                                    numberColor2();
+                                  });
+                                },
+                                child: const Text(
+                                  'Получить номер',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 17.0,
+                                    fontWeight: FontWeight.w600,
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 37, bottom: 0, left: 14, right: 14),
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    height: 144,
-                                    margin: const EdgeInsets.only(right: 14.0),
-                                    decoration: BoxDecoration(
-                                      color: _containerColor,
-                                      borderRadius: const BorderRadius.all(
-                                          Radius.circular(8)),
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        const Padding(
-                                            padding: EdgeInsets.all(18)),
-                                        Text(textNumber[indexNumber2],
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: _numberColor2,
-                                              fontSize: 50.0,
-                                              fontWeight: FontWeight.w700,
-                                            ),
-                                            overflow: TextOverflow.ellipsis),
-                                        const Padding(
-                                            padding: EdgeInsets.all(4)),
-                                        textContainer,
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  height: 207,
-                                  width: 163,
-                                  decoration: const BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(8)),
+                        ),
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 37, bottom: 0, left: 14, right: 14),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Expanded(
+                                child: Container(
+                                  height: 144,
+                                  margin: const EdgeInsets.only(right: 14.0),
+                                  decoration: BoxDecoration(
+                                    color: _containerColor,
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(8)),
                                   ),
                                   child: Column(
                                     children: [
                                       const Padding(
-                                          padding: EdgeInsets.all(14)),
-                                      Text(
-                                        textNumber[indexNumber],
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          color: _numberColor,
-                                          fontSize: 100.0,
-                                          fontWeight: FontWeight.w700,
-                                        ),
-                                      ),
-                                      const Padding(
-                                          padding: EdgeInsets.all(14)),
-                                      const Text(
-                                        'Номер за столом',
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 11.0,
-                                        ),
-                                      ),
-                                      const Padding(padding: EdgeInsets.all(8)),
+                                          padding: EdgeInsets.all(18)),
+                                      Text(textNumber[indexNumber2],
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            color: _numberColor2,
+                                            fontSize: 50.0,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                          overflow: TextOverflow.ellipsis),
+                                      const Padding(padding: EdgeInsets.all(4)),
+                                      textContainer,
                                     ],
                                   ),
                                 ),
-                                Expanded(
-                                  child: Container(
-                                    height: 144,
-                                    margin: const EdgeInsets.only(left: 14.0),
+                              ),
+                              Container(
+                                height: 207,
+                                width: 163,
+                                decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(8)),
+                                ),
+                                child: Column(
+                                  children: [
+                                    const Padding(padding: EdgeInsets.all(14)),
+                                    Text(
+                                      textNumber[indexNumber],
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color: _numberColor,
+                                        fontSize: 100.0,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                    const Padding(padding: EdgeInsets.all(14)),
+                                    const Text(
+                                      'Номер за столом',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 11.0,
+                                      ),
+                                    ),
+                                    const Padding(padding: EdgeInsets.all(8)),
+                                  ],
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  height: 144,
+                                  margin: const EdgeInsets.only(left: 14.0),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const Padding(padding: EdgeInsets.only(bottom: 31)),
+                          Container(
+                            padding: const EdgeInsets.only(left: 16, right: 12),
+                            height: 50,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              textBaseline: TextBaseline.ideographic,
+                              children: [
+                                const Text(
+                                  ' Свободных мест',
+                                  textAlign: TextAlign.right,
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                  ),
+                                ),
+                                Text(
+                                  '$countFreePlace  ',
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                    fontSize: 17.0,
                                   ),
                                 ),
                               ],
                             ),
-                            const Padding(padding: EdgeInsets.only(bottom: 31)),
-                            Container(
-                              padding:
-                                  const EdgeInsets.only(left: 16, right: 12),
-                              height: 50,
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                              ),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                textBaseline: TextBaseline.ideographic,
-                                children: [
-                                  const Text(
-                                    ' Свободных мест',
-                                    textAlign: TextAlign.right,
-                                    style: TextStyle(
-                                      fontSize: 17,
-                                    ),
+                          ),
+                          const Padding(padding: EdgeInsets.all(1)),
+                          Container(
+                            padding: const EdgeInsets.only(left: 16, right: 12),
+                            height: 50,
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5)),
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              textBaseline: TextBaseline.ideographic,
+                              children: [
+                                const Text(
+                                  ' Желающих играть',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontSize: 17.0,
                                   ),
-                                  Text(
-                                    '$countFreePlace  ',
-                                    textAlign: TextAlign.center,
+                                ),
+                                SizedBox(
+                                  width: 36.0,
+                                  child: TextFormField(
+                                    decoration: const InputDecoration(
+                                      border: InputBorder.none,
+                                    ),
+                                    controller: _getMaxSeats,
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(2),
+                                      FilteringTextInputFormatter.digitsOnly
+                                    ],
+                                    keyboardType: TextInputType.number,
+                                    textAlign: TextAlign.right,
                                     style: const TextStyle(
                                       fontSize: 17.0,
+                                      color: Color.fromRGBO(15, 119, 240, 1),
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                            const Padding(padding: EdgeInsets.all(1)),
-                            Container(
-                              padding:
-                                  const EdgeInsets.only(left: 16, right: 12),
-                              height: 50,
-                              decoration: const BoxDecoration(
-                                color: Colors.white,
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
-                              ),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                textBaseline: TextBaseline.ideographic,
-                                children: [
-                                  const Text(
-                                    ' Желающих играть',
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontSize: 17.0,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 36.0,
-                                    child: TextFormField(
-                                      decoration: const InputDecoration(
-                                        border: InputBorder.none,
-                                      ),
-                                      controller: _getMaxSeats,
-                                      inputFormatters: [
-                                        LengthLimitingTextInputFormatter(2),
-                                        FilteringTextInputFormatter.digitsOnly
-                                      ],
-                                      keyboardType: TextInputType.number,
-                                      textAlign: TextAlign.right,
-                                      style: const TextStyle(
-                                        fontSize: 17.0,
-                                        color: Color.fromRGBO(15, 119, 240, 1),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                  //const SizedBox(width: 600,),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+                //const SizedBox(width: 600,),
+              ],
             ),
           ),
         ),
