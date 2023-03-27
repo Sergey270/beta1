@@ -138,7 +138,7 @@ class _GetNumbersState extends State<GetNumbers> {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.black,
-              fontSize: 11.0,
+              fontSize: 9.0,
             ),
             overflow: TextOverflow.ellipsis);
       } else {
