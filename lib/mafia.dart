@@ -195,7 +195,7 @@ class _MafiaState extends State<Mafia> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(
-                    top: 10, bottom: 0, left: 13, right: 13),
+                    top: 13, bottom: 0, left: 13, right: 13),
                 child: Column(
                   children: [
                     Container(
