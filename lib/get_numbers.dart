@@ -13,8 +13,8 @@ class _GetNumbersState extends State<GetNumbers> {
   late TextEditingController _getMaxSeats = TextEditingController();
 
   late Color _containerColor;
-  late Color _numberColor;
-  late Color _numberColor2;
+  // late Color _numberColor;
+  // late Color _numberColor2;
   late Text textContainer;
 
   List<String> textNumber = [''];
@@ -52,31 +52,31 @@ class _GetNumbersState extends State<GetNumbers> {
       countWantPlay--;
     } else if (indexNumber > 0 &&
         indexNumber < (textNumber.length - 1) &&
-        (textNumber[indexNumber] != 'X') &&
-        textNumber[indexNumber + 1] == 'X') {
+        (textNumber[indexNumber] != '❌') &&
+        textNumber[indexNumber + 1] == '❌') {
       indexNumber++;
       indexNumber2++;
       countWantPlay--;
     } else if (indexNumber > 0 &&
         indexNumber < (textNumber.length - 1) &&
-        (textNumber[indexNumber] != 'X') &&
-        textNumber[indexNumber + 1] != 'X') {
-      indexNumber++;
-      indexNumber2++;
-      countFreePlace--;
-      countWantPlay--;
-    } else if (indexNumber > 0 &&
-        indexNumber < (textNumber.length - 1) &&
-        (textNumber[indexNumber] == 'X') &&
-        (textNumber[indexNumber + 1] != 'X')) {
+        (textNumber[indexNumber] != '❌') &&
+        textNumber[indexNumber + 1] != '❌') {
       indexNumber++;
       indexNumber2++;
       countFreePlace--;
       countWantPlay--;
     } else if (indexNumber > 0 &&
         indexNumber < (textNumber.length - 1) &&
-        (textNumber[indexNumber] == 'X') &&
-        (textNumber[indexNumber + 1] == 'X')) {
+        (textNumber[indexNumber] == '❌') &&
+        (textNumber[indexNumber + 1] != '❌')) {
+      indexNumber++;
+      indexNumber2++;
+      countFreePlace--;
+      countWantPlay--;
+    } else if (indexNumber > 0 &&
+        indexNumber < (textNumber.length - 1) &&
+        (textNumber[indexNumber] == '❌') &&
+        (textNumber[indexNumber + 1] == '❌')) {
       indexNumber++;
       indexNumber2++;
       countWantPlay--;
@@ -107,7 +107,7 @@ class _GetNumbersState extends State<GetNumbers> {
 
       if ((textNumber.length - 1) - indexNumber < maxSeats) {
         for (var k = 0; k < (maxSeats - (10 - indexNumber)); k++) {
-          textNumber.add('X');
+          textNumber.add('❌');
         }
 
         textNumber2[0] = textNumber[indexNumber];
@@ -155,21 +155,21 @@ class _GetNumbersState extends State<GetNumbers> {
     _getMaxSeats = TextEditingController(text: countWantPlay.toString());
   }
 
-  void numberColor() {
-    if (textNumber[indexNumber] == 'X') {
-      _numberColor = Colors.redAccent;
-    } else {
-      _numberColor = Colors.black;
-    }
-  }
-
-  void numberColor2() {
-    if (textNumber[indexNumber2] == 'X') {
-      _numberColor2 = Colors.redAccent;
-    } else {
-      _numberColor2 = Colors.black;
-    }
-  }
+  // void numberColor() {
+  //   if (textNumber[indexNumber] == '❌') {
+  //     _numberColor = Colors.redAccent;
+  //   } else {
+  //     _numberColor = Colors.black;
+  //   }
+  // }
+  //
+  // void numberColor2() {
+  //   if (textNumber[indexNumber2] == '❌') {
+  //     _numberColor2 = Colors.redAccent;
+  //   } else {
+  //     _numberColor2 = Colors.black;
+  //   }
+  // }
 
   @override
   void initState() {
@@ -188,8 +188,8 @@ class _GetNumbersState extends State<GetNumbers> {
     ];
     _containerColor = Colors.transparent;
     textContainer = const Text('');
-    _numberColor = Colors.black;
-    _numberColor2 = Colors.black;
+    // _numberColor = Colors.black;
+    // _numberColor2 = Colors.black;
     SystemChannels.textInput.invokeMethod('TextInput.hide');
 
     super.initState();
@@ -274,8 +274,8 @@ class _GetNumbersState extends State<GetNumbers> {
                                     _gerRandomNumber();
                                     _colorBox();
                                     control();
-                                    numberColor();
-                                    numberColor2();
+                                    // numberColor();
+                                    // numberColor2();
                                   });
                                 },
                                 child: const Text(
@@ -314,8 +314,8 @@ class _GetNumbersState extends State<GetNumbers> {
                                           padding: EdgeInsets.all(18)),
                                       Text(textNumber[indexNumber2],
                                           textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: _numberColor2,
+                                          style: const TextStyle(
+                                            color:Colors.black,
                                             fontSize: 50.0,
                                             fontWeight: FontWeight.w700,
                                           ),
@@ -340,8 +340,8 @@ class _GetNumbersState extends State<GetNumbers> {
                                     Text(
                                       textNumber[indexNumber],
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        color: _numberColor,
+                                      style: const TextStyle(
+                                        color: Colors.black,
                                         fontSize: 100.0,
                                         fontWeight: FontWeight.w700,
                                       ),
