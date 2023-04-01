@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'main_screen_widget.dart';
 
-
 class GetNumbers extends StatefulWidget {
   const GetNumbers({Key? key}) : super(key: key);
 
@@ -162,8 +161,8 @@ class _GetNumbersState extends State<GetNumbers> {
           fontWeight: FontWeight.w600,
         ),
       );
-      colorNumberButton = const Color.fromRGBO(
-          15, 119, 240, 0.5019607843137255);
+      colorNumberButton =
+          const Color.fromRGBO(15, 119, 240, 0.5019607843137255);
     } else {
       getNumberButton = const Text(
         'Получить номер',
@@ -172,7 +171,6 @@ class _GetNumbersState extends State<GetNumbers> {
           fontSize: 17.0,
           fontWeight: FontWeight.w600,
         ),
-
       );
       colorNumberButton = const Color.fromRGBO(15, 119, 240, 1);
     }
@@ -302,11 +300,10 @@ class _GetNumbersState extends State<GetNumbers> {
                       children: [
                         SizedBox(
                           height: MediaQuery.of(context).size.height -
-                              MediaQuery.of(context).viewPadding.top -
                               AppBar().preferredSize.height -
                               MediaQuery.of(context).padding.top -
-                              kToolbarHeight -
-                              80,
+                              MediaQuery.of(context).padding.bottom -
+                              kBottomNavigationBarHeight-80,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
@@ -316,7 +313,7 @@ class _GetNumbersState extends State<GetNumbers> {
                             child: Container(
                               height: 56,
                               width: double.infinity,
-                              decoration:  BoxDecoration(
+                              decoration: BoxDecoration(
                                 color: colorNumberButton,
                                 borderRadius:
                                     const BorderRadius.all(Radius.circular(20)),
@@ -324,7 +321,6 @@ class _GetNumbersState extends State<GetNumbers> {
                               child: TextButton(
                                   onPressed: () {
                                     setState(() {
-
                                       _getList();
                                       _gerRandomNumber();
                                       _colorBox();
