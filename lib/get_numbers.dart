@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'main_screen_widget.dart';
 
+
 class GetNumbers extends StatefulWidget {
   const GetNumbers({Key? key}) : super(key: key);
 
@@ -16,6 +17,9 @@ class _GetNumbersState extends State<GetNumbers> {
   Color numberColorBox2 = Colors.transparent;
   late Text textContainerSmall;
   late Text textContainer;
+  late Text getNumberButton;
+
+  late Color colorNumberButton;
 
   List<String> textNumber = [''];
   List<String> textNumber2 = [''];
@@ -148,6 +152,32 @@ class _GetNumbersState extends State<GetNumbers> {
     }
   }
 
+  void changeGetNumberButton() {
+    if (maxSeats == 1) {
+      getNumberButton = const Text(
+        'Начать заново',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 17.0,
+          fontWeight: FontWeight.w600,
+        ),
+      );
+      colorNumberButton = const Color.fromRGBO(
+          15, 119, 240, 0.5019607843137255);
+    } else {
+      getNumberButton = const Text(
+        'Получить номер',
+        style: TextStyle(
+          color: Colors.white,
+          fontSize: 17.0,
+          fontWeight: FontWeight.w600,
+        ),
+
+      );
+      colorNumberButton = const Color.fromRGBO(15, 119, 240, 1);
+    }
+  }
+
   void _colorBox() {
     if (check < 10) {
       check = 0;
@@ -195,6 +225,15 @@ class _GetNumbersState extends State<GetNumbers> {
     _containerColor = Colors.transparent;
     textContainerSmall = const Text('');
 
+    getNumberButton = const Text(
+      'Получить номер',
+      style: TextStyle(
+        color: Colors.white,
+        fontSize: 17.0,
+        fontWeight: FontWeight.w600,
+      ),
+    );
+
     textContainer = const Text(
       'Номер за столом',
       style: TextStyle(
@@ -202,6 +241,8 @@ class _GetNumbersState extends State<GetNumbers> {
         fontSize: 13.0,
       ),
     );
+
+    colorNumberButton = const Color.fromRGBO(15, 119, 240, 1);
 
     SystemChannels.textInput.invokeMethod('TextInput.hide');
 
@@ -275,30 +316,25 @@ class _GetNumbersState extends State<GetNumbers> {
                             child: Container(
                               height: 56,
                               width: double.infinity,
-                              decoration: const BoxDecoration(
-                                color: Color.fromRGBO(15, 119, 240, 1),
+                              decoration:  BoxDecoration(
+                                color: colorNumberButton,
                                 borderRadius:
-                                    BorderRadius.all(Radius.circular(20)),
+                                    const BorderRadius.all(Radius.circular(20)),
                               ),
                               child: TextButton(
-                                onPressed: () {
-                                  setState(() {
-                                    _getList();
-                                    _gerRandomNumber();
-                                    _colorBox();
-                                    control();
-                                    changeTextBigContainer();
-                                  });
-                                },
-                                child: const Text(
-                                  'Получить номер',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 17.0,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
+                                  onPressed: () {
+                                    setState(() {
+
+                                      _getList();
+                                      _gerRandomNumber();
+                                      _colorBox();
+                                      control();
+                                      changeTextBigContainer();
+
+                                      changeGetNumberButton();
+                                    });
+                                  },
+                                  child: getNumberButton),
                             ),
                           ),
                         ),

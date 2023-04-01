@@ -36,7 +36,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
               label: 'Раздача номеров',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.manage_accounts),
+              icon: Icon(Icons.bookmarks),
               label: 'Ведение игры',
             ),
           ],
