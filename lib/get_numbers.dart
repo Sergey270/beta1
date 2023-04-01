@@ -14,6 +14,7 @@ class _GetNumbersState extends State<GetNumbers> {
 
   late Color _containerColor;
   Color numberColorBox2 = Colors.transparent;
+  late Text textContainerSmall;
   late Text textContainer;
 
   List<String> textNumber = [''];
@@ -127,13 +128,33 @@ class _GetNumbersState extends State<GetNumbers> {
     }
   }
 
+  void changeTextBigContainer() {
+    if (textNumber[indexNumber] != '❌') {
+      textContainer = const Text(
+        'Номер за столом',
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 13.0,
+        ),
+      );
+    } else {
+      textContainer = const Text(
+        'Не играешь',
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 13.0,
+        ),
+      );
+    }
+  }
+
   void _colorBox() {
     if (check < 10) {
       check = 0;
 
       if (indexNumber > 1) {
         _containerColor = Colors.white;
-        textContainer = const Text('Предыдущий \n номер',
+        textContainerSmall = const Text('Предыдущий \n номер',
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.black,
@@ -143,7 +164,7 @@ class _GetNumbersState extends State<GetNumbers> {
         numberColorBox2 = Colors.black;
       } else {
         _containerColor = Colors.transparent;
-        textContainer = const Text('');
+        textContainerSmall = const Text('');
         numberColorBox2 = Colors.transparent;
         check = 0;
       }
@@ -172,7 +193,15 @@ class _GetNumbersState extends State<GetNumbers> {
       '10',
     ];
     _containerColor = Colors.transparent;
-    textContainer = const Text('');
+    textContainerSmall = const Text('');
+
+    textContainer = const Text(
+      'Номер за столом',
+      style: TextStyle(
+        color: Colors.black,
+        fontSize: 13.0,
+      ),
+    );
 
     SystemChannels.textInput.invokeMethod('TextInput.hide');
 
@@ -258,6 +287,7 @@ class _GetNumbersState extends State<GetNumbers> {
                                     _gerRandomNumber();
                                     _colorBox();
                                     control();
+                                    changeTextBigContainer();
                                   });
                                 },
                                 child: const Text(
@@ -303,7 +333,7 @@ class _GetNumbersState extends State<GetNumbers> {
                                           ),
                                           overflow: TextOverflow.ellipsis),
                                       const Padding(padding: EdgeInsets.all(4)),
-                                      textContainer,
+                                      textContainerSmall,
                                     ],
                                   ),
                                 ),
@@ -329,13 +359,7 @@ class _GetNumbersState extends State<GetNumbers> {
                                       ),
                                     ),
                                     const Padding(padding: EdgeInsets.all(14)),
-                                    const Text(
-                                      'Номер за столом',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 11.0,
-                                      ),
-                                    ),
+                                    textContainer,
                                     const Padding(padding: EdgeInsets.all(8)),
                                   ],
                                 ),
