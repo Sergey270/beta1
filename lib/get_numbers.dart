@@ -13,8 +13,7 @@ class _GetNumbersState extends State<GetNumbers> {
   late TextEditingController _getMaxSeats = TextEditingController();
 
   late Color _containerColor;
-  // late Color _numberColor;
-  // late Color _numberColor2;
+  Color numberColorBox2 = Colors.transparent;
   late Text textContainer;
 
   List<String> textNumber = [''];
@@ -86,7 +85,7 @@ class _GetNumbersState extends State<GetNumbers> {
       countFreePlace = 10;
       countWantPlay = 10;
       textNumber = [
-        '',
+        '#',
         '1 ',
         '2 ',
         '3 ',
@@ -141,9 +140,11 @@ class _GetNumbersState extends State<GetNumbers> {
               fontSize: 9.0,
             ),
             overflow: TextOverflow.ellipsis);
+        numberColorBox2 = Colors.black;
       } else {
         _containerColor = Colors.transparent;
         textContainer = const Text('');
+        numberColorBox2 = Colors.transparent;
         check = 0;
       }
     } else {
@@ -155,26 +156,10 @@ class _GetNumbersState extends State<GetNumbers> {
     _getMaxSeats = TextEditingController(text: countWantPlay.toString());
   }
 
-  // void numberColor() {
-  //   if (textNumber[indexNumber] == '❌') {
-  //     _numberColor = Colors.redAccent;
-  //   } else {
-  //     _numberColor = Colors.black;
-  //   }
-  // }
-  //
-  // void numberColor2() {
-  //   if (textNumber[indexNumber2] == '❌') {
-  //     _numberColor2 = Colors.redAccent;
-  //   } else {
-  //     _numberColor2 = Colors.black;
-  //   }
-  // }
-
   @override
   void initState() {
     textNumber = [
-      '',
+      '#',
       '1 ',
       '2 ',
       '3 ',
@@ -188,8 +173,7 @@ class _GetNumbersState extends State<GetNumbers> {
     ];
     _containerColor = Colors.transparent;
     textContainer = const Text('');
-    // _numberColor = Colors.black;
-    // _numberColor2 = Colors.black;
+
     SystemChannels.textInput.invokeMethod('TextInput.hide');
 
     super.initState();
@@ -274,8 +258,6 @@ class _GetNumbersState extends State<GetNumbers> {
                                     _gerRandomNumber();
                                     _colorBox();
                                     control();
-                                    // numberColor();
-                                    // numberColor2();
                                   });
                                 },
                                 child: const Text(
@@ -314,8 +296,8 @@ class _GetNumbersState extends State<GetNumbers> {
                                           padding: EdgeInsets.all(18)),
                                       Text(textNumber[indexNumber2],
                                           textAlign: TextAlign.center,
-                                          style: const TextStyle(
-                                            color:Colors.black,
+                                          style: TextStyle(
+                                            color: numberColorBox2,
                                             fontSize: 50.0,
                                             fontWeight: FontWeight.w700,
                                           ),
@@ -443,7 +425,6 @@ class _GetNumbersState extends State<GetNumbers> {
                     ),
                   ],
                 ),
-                //const SizedBox(width: 600,),
               ],
             ),
           ),
