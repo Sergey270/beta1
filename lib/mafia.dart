@@ -13,7 +13,8 @@ class _MafiaState extends State<Mafia> {
   List<String> textNumber = [];
   List<String> nominatePlayers = [''];
   late bool votingContainer;
-  late Color colorFouls;
+
+  Color colorFouls = Colors.grey;
   Color colorFrameInside = Colors.white;
   Color colorFrame = Colors.transparent;
   bool colorFrameBool = false;
@@ -25,11 +26,21 @@ class _MafiaState extends State<Mafia> {
   int fouls = 0;
   int voting = 0;
 
+  Color colorFouls2 = Colors.grey;
+  Color colorFrameInside2 = Colors.white;
+  Color colorFrame2 = Colors.transparent;
+  bool colorFrameBool2 = false;
+
   late bool space2;
   late bool deletePlayer2;
   late Color cleanColor2;
   int fouls2 = 0;
   int voting2 = 0;
+
+  Color colorFouls3 = Colors.grey;
+  Color colorFrameInside3 = Colors.white;
+  Color colorFrame3 = Colors.transparent;
+  bool colorFrameBool3 = false;
 
   late bool space3;
   late bool deletePlayer3;
@@ -37,11 +48,21 @@ class _MafiaState extends State<Mafia> {
   int fouls3 = 0;
   int voting3 = 0;
 
+  Color colorFouls4 = Colors.grey;
+  Color colorFrameInside4 = Colors.white;
+  Color colorFrame4 = Colors.transparent;
+  bool colorFrameBool4 = false;
+
   late bool space4;
   late bool deletePlayer4;
   late Color cleanColor4;
   int fouls4 = 0;
   int voting4 = 0;
+
+  Color colorFouls5 = Colors.grey;
+  Color colorFrameInside5 = Colors.white;
+  Color colorFrame5 = Colors.transparent;
+  bool colorFrameBool5 = false;
 
   late bool space5;
   late bool deletePlayer5;
@@ -49,11 +70,21 @@ class _MafiaState extends State<Mafia> {
   int fouls5 = 0;
   int voting5 = 0;
 
+  Color colorFouls6 = Colors.grey;
+  Color colorFrameInside6 = Colors.white;
+  Color colorFrame6 = Colors.transparent;
+  bool colorFrameBool6 = false;
+
   late bool space6;
   late bool deletePlayer6;
   late Color cleanColor6;
   int fouls6 = 0;
   int voting6 = 0;
+
+  Color colorFouls7 = Colors.grey;
+  Color colorFrameInside7 = Colors.white;
+  Color colorFrame7 = Colors.transparent;
+  bool colorFrameBool7 = false;
 
   late bool space7;
   late bool deletePlayer7;
@@ -61,17 +92,32 @@ class _MafiaState extends State<Mafia> {
   int fouls7 = 0;
   int voting7 = 0;
 
+  Color colorFouls8 = Colors.grey;
+  Color colorFrameInside8 = Colors.white;
+  Color colorFrame8 = Colors.transparent;
+  bool colorFrameBool8 = false;
+
   late bool space8;
   late bool deletePlayer8;
   late Color cleanColor8;
   int fouls8 = 0;
   int voting8 = 0;
 
+  Color colorFouls9 = Colors.grey;
+  Color colorFrameInside9 = Colors.white;
+  Color colorFrame9 = Colors.transparent;
+  bool colorFrameBool9 = false;
+
   late bool space9;
   late bool deletePlayer9;
   late Color cleanColor9;
   int fouls9 = 0;
   int voting9 = 0;
+
+  Color colorFouls10 = Colors.grey;
+  Color colorFrameInside10 = Colors.white;
+  Color colorFrame10 = Colors.transparent;
+  bool colorFrameBool10 = false;
 
   late bool space10;
   late bool deletePlayer10;
@@ -85,9 +131,6 @@ class _MafiaState extends State<Mafia> {
     textNumber = ['👮‍♀', '🔴', '🔴', '🔴', '🔴', '🔴', '🔴', '⚫️', '⚫️', '💍']
       ..shuffle();
     votingContainer = false;
-
-    colorFouls = Colors.grey;
-    // colorFrameInside = Colors.white;
 
     hideRoles = true;
     space = true;
@@ -143,6 +186,213 @@ class _MafiaState extends State<Mafia> {
     deletePlayer && colorFrameBool
         ? colorFrame = Colors.red
         : colorFrame = Colors.transparent;
+  }
+
+  void changeColorFouls2() {
+    if (fouls2 == 0) {
+      colorFouls2 = Colors.grey;
+    } else if (fouls2 >= 1 && fouls2 < 3) {
+      colorFouls2 = Colors.black;
+      colorFrameInside2 = Colors.white;
+      colorFrame2 = Colors.transparent;
+      colorFrameBool2 = false;
+    } else {
+      colorFouls2 = Colors.red;
+
+      colorFrameInside2 = const Color.fromRGBO(255, 233, 233, 1);
+      colorFrame2 = Colors.red;
+      colorFrameBool2 = true;
+    }
+  }
+
+  void changeColorFrame2() {
+    deletePlayer2 && colorFrameBool2
+        ? colorFrame2 = Colors.red
+        : colorFrame2 = Colors.transparent;
+  }
+
+  void changeColorFouls3() {
+    if (fouls3 == 0) {
+      colorFouls3 = Colors.grey;
+    } else if (fouls3 >= 1 && fouls3 < 3) {
+      colorFouls3 = Colors.black;
+      colorFrameInside3 = Colors.white;
+      colorFrame3 = Colors.transparent;
+      colorFrameBool3 = false;
+    } else {
+      colorFouls3 = Colors.red;
+
+      colorFrameInside3 = const Color.fromRGBO(255, 233, 233, 1);
+      colorFrame3 = Colors.red;
+      colorFrameBool3 = true;
+    }
+  }
+
+  void changeColorFrame3() {
+    deletePlayer3 && colorFrameBool3
+        ? colorFrame3 = Colors.red
+        : colorFrame3 = Colors.transparent;
+  }
+
+  void changeColorFouls4() {
+    if (fouls4 == 0) {
+      colorFouls4 = Colors.grey;
+    } else if (fouls4 >= 1 && fouls4 < 3) {
+      colorFouls4 = Colors.black;
+      colorFrameInside4 = Colors.white;
+      colorFrame4 = Colors.transparent;
+      colorFrameBool4 = false;
+    } else {
+      colorFouls4 = Colors.red;
+
+      colorFrameInside4 = const Color.fromRGBO(255, 233, 233, 1);
+      colorFrame4 = Colors.red;
+      colorFrameBool4 = true;
+    }
+  }
+
+  void changeColorFrame4() {
+    deletePlayer4 && colorFrameBool4
+        ? colorFrame4 = Colors.red
+        : colorFrame4 = Colors.transparent;
+  }
+
+  void changeColorFouls5() {
+    if (fouls5 == 0) {
+      colorFouls5 = Colors.grey;
+    } else if (fouls5 >= 1 && fouls5 < 3) {
+      colorFouls5 = Colors.black;
+      colorFrameInside5 = Colors.white;
+      colorFrame5 = Colors.transparent;
+      colorFrameBool5 = false;
+    } else {
+      colorFouls5 = Colors.red;
+
+      colorFrameInside5 = const Color.fromRGBO(255, 233, 233, 1);
+      colorFrame5 = Colors.red;
+      colorFrameBool5 = true;
+    }
+  }
+
+  void changeColorFrame5() {
+    deletePlayer5 && colorFrameBool5
+        ? colorFrame5 = Colors.red
+        : colorFrame5 = Colors.transparent;
+  }
+
+  void changeColorFouls6() {
+    if (fouls6 == 0) {
+      colorFouls6 = Colors.grey;
+    } else if (fouls6 >= 1 && fouls6 < 3) {
+      colorFouls6 = Colors.black;
+      colorFrameInside6 = Colors.white;
+      colorFrame6 = Colors.transparent;
+      colorFrameBool6 = false;
+    } else {
+      colorFouls6 = Colors.red;
+
+      colorFrameInside6 = const Color.fromRGBO(255, 233, 233, 1);
+      colorFrame6 = Colors.red;
+      colorFrameBool6 = true;
+    }
+  }
+
+  void changeColorFrame6() {
+    deletePlayer6 && colorFrameBool6
+        ? colorFrame6 = Colors.red
+        : colorFrame6 = Colors.transparent;
+  }
+
+  void changeColorFouls7() {
+    if (fouls7 == 0) {
+      colorFouls7 = Colors.grey;
+    } else if (fouls7 >= 1 && fouls7 < 3) {
+      colorFouls7 = Colors.black;
+      colorFrameInside7 = Colors.white;
+      colorFrame7 = Colors.transparent;
+      colorFrameBool7 = false;
+    } else {
+      colorFouls7 = Colors.red;
+
+      colorFrameInside7 = const Color.fromRGBO(255, 233, 233, 1);
+      colorFrame7 = Colors.red;
+      colorFrameBool7 = true;
+    }
+  }
+
+  void changeColorFrame7() {
+    deletePlayer7 && colorFrameBool7
+        ? colorFrame7 = Colors.red
+        : colorFrame7 = Colors.transparent;
+  }
+
+  void changeColorFouls8() {
+    if (fouls8 == 0) {
+      colorFouls8 = Colors.grey;
+    } else if (fouls8 >= 1 && fouls8 < 3) {
+      colorFouls8 = Colors.black;
+      colorFrameInside8 = Colors.white;
+      colorFrame8 = Colors.transparent;
+      colorFrameBool8 = false;
+    } else {
+      colorFouls8 = Colors.red;
+
+      colorFrameInside8 = const Color.fromRGBO(255, 233, 233, 1);
+      colorFrame8 = Colors.red;
+      colorFrameBool8 = true;
+    }
+  }
+
+  void changeColorFrame8() {
+    deletePlayer8 && colorFrameBool8
+        ? colorFrame8 = Colors.red
+        : colorFrame8 = Colors.transparent;
+  }
+
+  void changeColorFouls9() {
+    if (fouls9 == 0) {
+      colorFouls9 = Colors.grey;
+    } else if (fouls9 >= 1 && fouls9 < 3) {
+      colorFouls9 = Colors.black;
+      colorFrameInside9 = Colors.white;
+      colorFrame9 = Colors.transparent;
+      colorFrameBool9 = false;
+    } else {
+      colorFouls9 = Colors.red;
+
+      colorFrameInside9 = const Color.fromRGBO(255, 233, 233, 1);
+      colorFrame9 = Colors.red;
+      colorFrameBool9 = true;
+    }
+  }
+
+  void changeColorFrame9() {
+    deletePlayer9 && colorFrameBool9
+        ? colorFrame9 = Colors.red
+        : colorFrame9 = Colors.transparent;
+  }
+
+  void changeColorFouls10() {
+    if (fouls10 == 0) {
+      colorFouls10 = Colors.grey;
+    } else if (fouls10 >= 1 && fouls10 < 3) {
+      colorFouls10 = Colors.black;
+      colorFrameInside10 = Colors.white;
+      colorFrame10 = Colors.transparent;
+      colorFrameBool10 = false;
+    } else {
+      colorFouls10 = Colors.red;
+
+      colorFrameInside10 = const Color.fromRGBO(255, 233, 233, 1);
+      colorFrame10 = Colors.red;
+      colorFrameBool10 = true;
+    }
+  }
+
+  void changeColorFrame10() {
+    deletePlayer10 && colorFrameBool10
+        ? colorFrame10 = Colors.red
+        : colorFrame10 = Colors.transparent;
   }
 
   void isVotingContainer() {
@@ -462,10 +712,16 @@ class _MafiaState extends State<Mafia> {
                                   ? const SizedBox()
                                   : Expanded(
                                       child: Container(
-                                        color: space
-                                            ? Colors.transparent
-                                            : const Color.fromRGBO(
-                                                15, 119, 240, 1),
+                                        decoration: BoxDecoration(
+                                          color: space
+                                              ? Colors.transparent
+                                              : const Color.fromRGBO(
+                                                  15, 119, 240, 1),
+                                          borderRadius: const BorderRadius.only(
+                                            bottomRight: Radius.circular(9),
+                                            topRight: Radius.circular(9),
+                                          ),
+                                        ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -556,11 +812,11 @@ class _MafiaState extends State<Mafia> {
                           clipBehavior: Clip.hardEdge,
                           decoration: BoxDecoration(
                             border: Border.all(
-                              color: Colors.red, //
-                              width: 2.0,
+                              color: colorFrame2,
+                              width: 1.0,
                             ),
                             color: deletePlayer2
-                                ? colorFrameInside
+                                ? colorFrameInside2
                                 : Colors.transparent,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
@@ -584,8 +840,8 @@ class _MafiaState extends State<Mafia> {
                                               style: TextStyle(
                                                 fontSize: 22.0,
                                                 color: deletePlayer2
-                                                    ? cleanColor = Colors.black
-                                                    : cleanColor =
+                                                    ? cleanColor2 = Colors.black
+                                                    : cleanColor2 =
                                                         const Color(0x66181818),
                                                 fontWeight: FontWeight.w700,
                                               ),
@@ -601,8 +857,8 @@ class _MafiaState extends State<Mafia> {
                                         '2',
                                         style: TextStyle(
                                           color: deletePlayer2
-                                              ? cleanColor = Colors.black
-                                              : cleanColor = const Color(
+                                              ? cleanColor2 = Colors.black
+                                              : cleanColor2 = const Color(
                                                   0x80999999,
                                                 ),
                                           fontSize: 17.0,
@@ -623,6 +879,7 @@ class _MafiaState extends State<Mafia> {
                                           setState(() {
                                             space2 = true;
                                             deletePlayer2 = !deletePlayer2;
+                                            changeColorFrame2();
                                           });
                                         },
                                         child: Text(
@@ -630,10 +887,9 @@ class _MafiaState extends State<Mafia> {
                                           style: TextStyle(
                                             fontSize: 17.0,
                                             color: deletePlayer2
-                                                ? cleanColor =
-                                                    const Color.fromRGBO(
-                                                        15, 119, 240, 1)
-                                                : cleanColor =
+                                                ? const Color.fromRGBO(
+                                                    15, 119, 240, 1)
+                                                : cleanColor2 =
                                                     const Color(0x80999999),
                                             fontWeight: FontWeight.w700,
                                           ),
@@ -661,7 +917,8 @@ class _MafiaState extends State<Mafia> {
                                                 thickness: 1,
                                                 indent: 11,
                                                 endIndent: 11,
-                                                color: Colors.grey,
+                                                color: Color.fromRGBO(
+                                                    250, 225, 231, 1),
                                               ),
                                             ),
                                             SizedBox(
@@ -677,6 +934,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls2 > 0) {
                                                       fouls2--;
+                                                      changeColorFouls2();
                                                     }
                                                   });
                                                 },
@@ -696,9 +954,9 @@ class _MafiaState extends State<Mafia> {
                                               width: 24,
                                               child: Text(
                                                 '$fouls2',
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                   fontSize: 17.0,
-                                                  color: Colors.black,
+                                                  color: colorFouls2,
                                                 ),
                                               ),
                                             ),
@@ -715,6 +973,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls2 < 4) {
                                                       fouls2++;
+                                                      changeColorFouls2();
                                                     }
                                                   });
                                                 },
@@ -736,7 +995,8 @@ class _MafiaState extends State<Mafia> {
                                                       thickness: 1,
                                                       indent: 11,
                                                       endIndent: 11,
-                                                      color: Colors.grey,
+                                                      color: Color.fromRGBO(
+                                                          250, 225, 231, 1),
                                                     ),
                                                   )
                                                 : const SizedBox(),
@@ -753,12 +1013,13 @@ class _MafiaState extends State<Mafia> {
                                           : const Color.fromRGBO(
                                               15, 119, 240, 1),
                                       height: double.infinity,
-                                      child: TextButton(
-                                        style: TextButton.styleFrom(
-                                          minimumSize: const Size(
-                                            1.0,
-                                            1.0,
-                                          ),
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.thumb_up_alt_outlined,
+                                          color: space2
+                                              ? const Color.fromRGBO(
+                                                  15, 119, 240, 1)
+                                              : Colors.white,
                                         ),
                                         onPressed: () {
                                           setState(() {
@@ -769,15 +1030,6 @@ class _MafiaState extends State<Mafia> {
                                             isVotingContainer();
                                           });
                                         },
-                                        child: const Text(
-                                          '👍',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontSize: 22.0,
-                                            color:
-                                                Color.fromRGBO(15, 119, 240, 1),
-                                          ),
-                                        ),
                                       ),
                                     )
                                   : const SizedBox(
@@ -787,10 +1039,16 @@ class _MafiaState extends State<Mafia> {
                                   ? const SizedBox()
                                   : Expanded(
                                       child: Container(
-                                        color: space2
-                                            ? Colors.transparent
-                                            : const Color.fromRGBO(
-                                                15, 119, 240, 1),
+                                        decoration: BoxDecoration(
+                                          color: space2
+                                              ? Colors.transparent
+                                              : const Color.fromRGBO(
+                                                  15, 119, 240, 1),
+                                          borderRadius: const BorderRadius.only(
+                                            bottomRight: Radius.circular(9),
+                                            topRight: Radius.circular(9),
+                                          ),
+                                        ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -880,8 +1138,12 @@ class _MafiaState extends State<Mafia> {
                         Container(
                           clipBehavior: Clip.hardEdge,
                           decoration: BoxDecoration(
+                            border: Border.all(
+                              color: colorFrame3,
+                              width: 1.0,
+                            ),
                             color: deletePlayer3
-                                ? Colors.white
+                                ? colorFrameInside3
                                 : Colors.transparent,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
@@ -905,8 +1167,8 @@ class _MafiaState extends State<Mafia> {
                                               style: TextStyle(
                                                 fontSize: 22.0,
                                                 color: deletePlayer3
-                                                    ? cleanColor = Colors.black
-                                                    : cleanColor =
+                                                    ? cleanColor3 = Colors.black
+                                                    : cleanColor3 =
                                                         const Color(0x66181818),
                                                 fontWeight: FontWeight.w700,
                                               ),
@@ -922,8 +1184,8 @@ class _MafiaState extends State<Mafia> {
                                         '3',
                                         style: TextStyle(
                                           color: deletePlayer3
-                                              ? cleanColor = Colors.black
-                                              : cleanColor = const Color(
+                                              ? cleanColor3 = Colors.black
+                                              : cleanColor3 = const Color(
                                                   0x80999999,
                                                 ),
                                           fontSize: 17.0,
@@ -944,6 +1206,7 @@ class _MafiaState extends State<Mafia> {
                                           setState(() {
                                             space3 = true;
                                             deletePlayer3 = !deletePlayer3;
+                                            changeColorFrame3();
                                           });
                                         },
                                         child: Text(
@@ -951,8 +1214,9 @@ class _MafiaState extends State<Mafia> {
                                           style: TextStyle(
                                             fontSize: 17.0,
                                             color: deletePlayer3
-                                                ? cleanColor = Colors.red
-                                                : cleanColor =
+                                                ? const Color.fromRGBO(
+                                                    15, 119, 240, 1)
+                                                : cleanColor3 =
                                                     const Color(0x80999999),
                                             fontWeight: FontWeight.w700,
                                           ),
@@ -980,7 +1244,8 @@ class _MafiaState extends State<Mafia> {
                                                 thickness: 1,
                                                 indent: 11,
                                                 endIndent: 11,
-                                                color: Colors.grey,
+                                                color: Color.fromRGBO(
+                                                    250, 225, 231, 1),
                                               ),
                                             ),
                                             SizedBox(
@@ -996,6 +1261,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls3 > 0) {
                                                       fouls3--;
+                                                      changeColorFouls3();
                                                     }
                                                   });
                                                 },
@@ -1015,9 +1281,9 @@ class _MafiaState extends State<Mafia> {
                                               width: 24,
                                               child: Text(
                                                 '$fouls3',
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                   fontSize: 17.0,
-                                                  color: Colors.black,
+                                                  color: colorFouls3,
                                                 ),
                                               ),
                                             ),
@@ -1034,6 +1300,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls3 < 4) {
                                                       fouls3++;
+                                                      changeColorFouls3();
                                                     }
                                                   });
                                                 },
@@ -1055,7 +1322,8 @@ class _MafiaState extends State<Mafia> {
                                                       thickness: 1,
                                                       indent: 11,
                                                       endIndent: 11,
-                                                      color: Colors.grey,
+                                                      color: Color.fromRGBO(
+                                                          250, 225, 231, 1),
                                                     ),
                                                   )
                                                 : const SizedBox(),
@@ -1072,12 +1340,13 @@ class _MafiaState extends State<Mafia> {
                                           : const Color.fromRGBO(
                                               15, 119, 240, 1),
                                       height: double.infinity,
-                                      child: TextButton(
-                                        style: TextButton.styleFrom(
-                                          minimumSize: const Size(
-                                            1.0,
-                                            1.0,
-                                          ),
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.thumb_up_alt_outlined,
+                                          color: space3
+                                              ? const Color.fromRGBO(
+                                                  15, 119, 240, 1)
+                                              : Colors.white,
                                         ),
                                         onPressed: () {
                                           setState(() {
@@ -1088,15 +1357,6 @@ class _MafiaState extends State<Mafia> {
                                             isVotingContainer();
                                           });
                                         },
-                                        child: const Text(
-                                          '👍',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontSize: 22.0,
-                                            color:
-                                                Color.fromRGBO(15, 119, 240, 1),
-                                          ),
-                                        ),
                                       ),
                                     )
                                   : const SizedBox(
@@ -1106,10 +1366,16 @@ class _MafiaState extends State<Mafia> {
                                   ? const SizedBox()
                                   : Expanded(
                                       child: Container(
-                                        color: space3
-                                            ? Colors.transparent
-                                            : const Color.fromRGBO(
-                                                15, 119, 240, 1),
+                                        decoration: BoxDecoration(
+                                          color: space3
+                                              ? Colors.transparent
+                                              : const Color.fromRGBO(
+                                                  15, 119, 240, 1),
+                                          borderRadius: const BorderRadius.only(
+                                            bottomRight: Radius.circular(9),
+                                            topRight: Radius.circular(9),
+                                          ),
+                                        ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -1199,8 +1465,12 @@ class _MafiaState extends State<Mafia> {
                         Container(
                           clipBehavior: Clip.hardEdge,
                           decoration: BoxDecoration(
+                            border: Border.all(
+                              color: colorFrame4,
+                              width: 1.0,
+                            ),
                             color: deletePlayer4
-                                ? Colors.white
+                                ? colorFrameInside4
                                 : Colors.transparent,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
@@ -1224,8 +1494,8 @@ class _MafiaState extends State<Mafia> {
                                               style: TextStyle(
                                                 fontSize: 22.0,
                                                 color: deletePlayer4
-                                                    ? cleanColor = Colors.black
-                                                    : cleanColor =
+                                                    ? cleanColor4 = Colors.black
+                                                    : cleanColor4 =
                                                         const Color(0x66181818),
                                                 fontWeight: FontWeight.w700,
                                               ),
@@ -1241,8 +1511,8 @@ class _MafiaState extends State<Mafia> {
                                         '4',
                                         style: TextStyle(
                                           color: deletePlayer4
-                                              ? cleanColor = Colors.black
-                                              : cleanColor = const Color(
+                                              ? cleanColor4 = Colors.black
+                                              : cleanColor4 = const Color(
                                                   0x80999999,
                                                 ),
                                           fontSize: 17.0,
@@ -1263,6 +1533,7 @@ class _MafiaState extends State<Mafia> {
                                           setState(() {
                                             space4 = true;
                                             deletePlayer4 = !deletePlayer4;
+                                            changeColorFrame4();
                                           });
                                         },
                                         child: Text(
@@ -1270,8 +1541,9 @@ class _MafiaState extends State<Mafia> {
                                           style: TextStyle(
                                             fontSize: 17.0,
                                             color: deletePlayer4
-                                                ? cleanColor = Colors.red
-                                                : cleanColor =
+                                                ? const Color.fromRGBO(
+                                                    15, 119, 240, 1)
+                                                : cleanColor4 =
                                                     const Color(0x80999999),
                                             fontWeight: FontWeight.w700,
                                           ),
@@ -1299,7 +1571,8 @@ class _MafiaState extends State<Mafia> {
                                                 thickness: 1,
                                                 indent: 11,
                                                 endIndent: 11,
-                                                color: Colors.grey,
+                                                color: Color.fromRGBO(
+                                                    250, 225, 231, 1),
                                               ),
                                             ),
                                             SizedBox(
@@ -1315,6 +1588,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls4 > 0) {
                                                       fouls4--;
+                                                      changeColorFouls4();
                                                     }
                                                   });
                                                 },
@@ -1334,9 +1608,9 @@ class _MafiaState extends State<Mafia> {
                                               width: 24,
                                               child: Text(
                                                 '$fouls4',
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                   fontSize: 17.0,
-                                                  color: Colors.black,
+                                                  color: colorFouls4,
                                                 ),
                                               ),
                                             ),
@@ -1353,6 +1627,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls4 < 4) {
                                                       fouls4++;
+                                                      changeColorFouls4();
                                                     }
                                                   });
                                                 },
@@ -1374,7 +1649,8 @@ class _MafiaState extends State<Mafia> {
                                                       thickness: 1,
                                                       indent: 11,
                                                       endIndent: 11,
-                                                      color: Colors.grey,
+                                                      color: Color.fromRGBO(
+                                                          250, 225, 231, 1),
                                                     ),
                                                   )
                                                 : const SizedBox(),
@@ -1391,12 +1667,13 @@ class _MafiaState extends State<Mafia> {
                                           : const Color.fromRGBO(
                                               15, 119, 240, 1),
                                       height: double.infinity,
-                                      child: TextButton(
-                                        style: TextButton.styleFrom(
-                                          minimumSize: const Size(
-                                            1.0,
-                                            1.0,
-                                          ),
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.thumb_up_alt_outlined,
+                                          color: space4
+                                              ? const Color.fromRGBO(
+                                                  15, 119, 240, 1)
+                                              : Colors.white,
                                         ),
                                         onPressed: () {
                                           setState(() {
@@ -1407,15 +1684,6 @@ class _MafiaState extends State<Mafia> {
                                             isVotingContainer();
                                           });
                                         },
-                                        child: const Text(
-                                          '👍',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontSize: 22.0,
-                                            color:
-                                                Color.fromRGBO(15, 119, 240, 1),
-                                          ),
-                                        ),
                                       ),
                                     )
                                   : const SizedBox(
@@ -1425,10 +1693,16 @@ class _MafiaState extends State<Mafia> {
                                   ? const SizedBox()
                                   : Expanded(
                                       child: Container(
-                                        color: space4
-                                            ? Colors.transparent
-                                            : const Color.fromRGBO(
-                                                15, 119, 240, 1),
+                                        decoration: BoxDecoration(
+                                          color: space4
+                                              ? Colors.transparent
+                                              : const Color.fromRGBO(
+                                                  15, 119, 240, 1),
+                                          borderRadius: const BorderRadius.only(
+                                            bottomRight: Radius.circular(9),
+                                            topRight: Radius.circular(9),
+                                          ),
+                                        ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -1518,8 +1792,12 @@ class _MafiaState extends State<Mafia> {
                         Container(
                           clipBehavior: Clip.hardEdge,
                           decoration: BoxDecoration(
+                            border: Border.all(
+                              color: colorFrame5,
+                              width: 1.0,
+                            ),
                             color: deletePlayer5
-                                ? Colors.white
+                                ? colorFrameInside5
                                 : Colors.transparent,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
@@ -1543,8 +1821,8 @@ class _MafiaState extends State<Mafia> {
                                               style: TextStyle(
                                                 fontSize: 22.0,
                                                 color: deletePlayer5
-                                                    ? cleanColor = Colors.black
-                                                    : cleanColor =
+                                                    ? cleanColor5 = Colors.black
+                                                    : cleanColor5 =
                                                         const Color(0x66181818),
                                                 fontWeight: FontWeight.w700,
                                               ),
@@ -1560,8 +1838,8 @@ class _MafiaState extends State<Mafia> {
                                         '5',
                                         style: TextStyle(
                                           color: deletePlayer5
-                                              ? cleanColor = Colors.black
-                                              : cleanColor = const Color(
+                                              ? cleanColor5 = Colors.black
+                                              : cleanColor5 = const Color(
                                                   0x80999999,
                                                 ),
                                           fontSize: 17.0,
@@ -1582,6 +1860,7 @@ class _MafiaState extends State<Mafia> {
                                           setState(() {
                                             space5 = true;
                                             deletePlayer5 = !deletePlayer5;
+                                            changeColorFrame5();
                                           });
                                         },
                                         child: Text(
@@ -1589,8 +1868,9 @@ class _MafiaState extends State<Mafia> {
                                           style: TextStyle(
                                             fontSize: 17.0,
                                             color: deletePlayer5
-                                                ? cleanColor = Colors.red
-                                                : cleanColor =
+                                                ? const Color.fromRGBO(
+                                                    15, 119, 240, 1)
+                                                : cleanColor5 =
                                                     const Color(0x80999999),
                                             fontWeight: FontWeight.w700,
                                           ),
@@ -1618,7 +1898,8 @@ class _MafiaState extends State<Mafia> {
                                                 thickness: 1,
                                                 indent: 11,
                                                 endIndent: 11,
-                                                color: Colors.grey,
+                                                color: Color.fromRGBO(
+                                                    250, 225, 231, 1),
                                               ),
                                             ),
                                             SizedBox(
@@ -1634,6 +1915,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls5 > 0) {
                                                       fouls5--;
+                                                      changeColorFouls5();
                                                     }
                                                   });
                                                 },
@@ -1653,9 +1935,9 @@ class _MafiaState extends State<Mafia> {
                                               width: 24,
                                               child: Text(
                                                 '$fouls5',
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                   fontSize: 17.0,
-                                                  color: Colors.black,
+                                                  color: colorFouls5,
                                                 ),
                                               ),
                                             ),
@@ -1672,6 +1954,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls5 < 4) {
                                                       fouls5++;
+                                                      changeColorFouls5();
                                                     }
                                                   });
                                                 },
@@ -1693,7 +1976,8 @@ class _MafiaState extends State<Mafia> {
                                                       thickness: 1,
                                                       indent: 11,
                                                       endIndent: 11,
-                                                      color: Colors.grey,
+                                                      color: Color.fromRGBO(
+                                                          250, 225, 231, 1),
                                                     ),
                                                   )
                                                 : const SizedBox(),
@@ -1710,12 +1994,13 @@ class _MafiaState extends State<Mafia> {
                                           : const Color.fromRGBO(
                                               15, 119, 240, 1),
                                       height: double.infinity,
-                                      child: TextButton(
-                                        style: TextButton.styleFrom(
-                                          minimumSize: const Size(
-                                            1.0,
-                                            1.0,
-                                          ),
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.thumb_up_alt_outlined,
+                                          color: space5
+                                              ? const Color.fromRGBO(
+                                                  15, 119, 240, 1)
+                                              : Colors.white,
                                         ),
                                         onPressed: () {
                                           setState(() {
@@ -1726,15 +2011,6 @@ class _MafiaState extends State<Mafia> {
                                             isVotingContainer();
                                           });
                                         },
-                                        child: const Text(
-                                          '👍',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontSize: 22.0,
-                                            color:
-                                                Color.fromRGBO(15, 119, 240, 1),
-                                          ),
-                                        ),
                                       ),
                                     )
                                   : const SizedBox(
@@ -1744,10 +2020,16 @@ class _MafiaState extends State<Mafia> {
                                   ? const SizedBox()
                                   : Expanded(
                                       child: Container(
-                                        color: space5
-                                            ? Colors.transparent
-                                            : const Color.fromRGBO(
-                                                15, 119, 240, 1),
+                                        decoration: BoxDecoration(
+                                          color: space5
+                                              ? Colors.transparent
+                                              : const Color.fromRGBO(
+                                                  15, 119, 240, 1),
+                                          borderRadius: const BorderRadius.only(
+                                            bottomRight: Radius.circular(9),
+                                            topRight: Radius.circular(9),
+                                          ),
+                                        ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -1837,8 +2119,12 @@ class _MafiaState extends State<Mafia> {
                         Container(
                           clipBehavior: Clip.hardEdge,
                           decoration: BoxDecoration(
+                            border: Border.all(
+                              color: colorFrame6,
+                              width: 1.0,
+                            ),
                             color: deletePlayer6
-                                ? Colors.white
+                                ? colorFrameInside6
                                 : Colors.transparent,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
@@ -1862,8 +2148,8 @@ class _MafiaState extends State<Mafia> {
                                               style: TextStyle(
                                                 fontSize: 22.0,
                                                 color: deletePlayer6
-                                                    ? cleanColor = Colors.black
-                                                    : cleanColor =
+                                                    ? cleanColor6 = Colors.black
+                                                    : cleanColor6 =
                                                         const Color(0x66181818),
                                                 fontWeight: FontWeight.w700,
                                               ),
@@ -1879,8 +2165,8 @@ class _MafiaState extends State<Mafia> {
                                         '6',
                                         style: TextStyle(
                                           color: deletePlayer6
-                                              ? cleanColor = Colors.black
-                                              : cleanColor = const Color(
+                                              ? cleanColor6 = Colors.black
+                                              : cleanColor6 = const Color(
                                                   0x80999999,
                                                 ),
                                           fontSize: 17.0,
@@ -1901,6 +2187,7 @@ class _MafiaState extends State<Mafia> {
                                           setState(() {
                                             space6 = true;
                                             deletePlayer6 = !deletePlayer6;
+                                            changeColorFrame6();
                                           });
                                         },
                                         child: Text(
@@ -1908,8 +2195,9 @@ class _MafiaState extends State<Mafia> {
                                           style: TextStyle(
                                             fontSize: 17.0,
                                             color: deletePlayer6
-                                                ? cleanColor = Colors.red
-                                                : cleanColor =
+                                                ? const Color.fromRGBO(
+                                                    15, 119, 240, 1)
+                                                : cleanColor6 =
                                                     const Color(0x80999999),
                                             fontWeight: FontWeight.w700,
                                           ),
@@ -1937,7 +2225,8 @@ class _MafiaState extends State<Mafia> {
                                                 thickness: 1,
                                                 indent: 11,
                                                 endIndent: 11,
-                                                color: Colors.grey,
+                                                color: Color.fromRGBO(
+                                                    250, 225, 231, 1),
                                               ),
                                             ),
                                             SizedBox(
@@ -1953,6 +2242,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls6 > 0) {
                                                       fouls6--;
+                                                      changeColorFouls6();
                                                     }
                                                   });
                                                 },
@@ -1972,9 +2262,9 @@ class _MafiaState extends State<Mafia> {
                                               width: 24,
                                               child: Text(
                                                 '$fouls6',
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                   fontSize: 17.0,
-                                                  color: Colors.black,
+                                                  color: colorFouls6,
                                                 ),
                                               ),
                                             ),
@@ -1991,6 +2281,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls6 < 4) {
                                                       fouls6++;
+                                                      changeColorFouls6();
                                                     }
                                                   });
                                                 },
@@ -2012,7 +2303,8 @@ class _MafiaState extends State<Mafia> {
                                                       thickness: 1,
                                                       indent: 11,
                                                       endIndent: 11,
-                                                      color: Colors.grey,
+                                                      color: Color.fromRGBO(
+                                                          250, 225, 231, 1),
                                                     ),
                                                   )
                                                 : const SizedBox(),
@@ -2029,12 +2321,13 @@ class _MafiaState extends State<Mafia> {
                                           : const Color.fromRGBO(
                                               15, 119, 240, 1),
                                       height: double.infinity,
-                                      child: TextButton(
-                                        style: TextButton.styleFrom(
-                                          minimumSize: const Size(
-                                            1.0,
-                                            1.0,
-                                          ),
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.thumb_up_alt_outlined,
+                                          color: space6
+                                              ? const Color.fromRGBO(
+                                                  15, 119, 240, 1)
+                                              : Colors.white,
                                         ),
                                         onPressed: () {
                                           setState(() {
@@ -2045,15 +2338,6 @@ class _MafiaState extends State<Mafia> {
                                             isVotingContainer();
                                           });
                                         },
-                                        child: const Text(
-                                          '👍',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontSize: 22.0,
-                                            color:
-                                                Color.fromRGBO(15, 119, 240, 1),
-                                          ),
-                                        ),
                                       ),
                                     )
                                   : const SizedBox(
@@ -2063,10 +2347,16 @@ class _MafiaState extends State<Mafia> {
                                   ? const SizedBox()
                                   : Expanded(
                                       child: Container(
-                                        color: space6
-                                            ? Colors.transparent
-                                            : const Color.fromRGBO(
-                                                15, 119, 240, 1),
+                                        decoration: BoxDecoration(
+                                          color: space6
+                                              ? Colors.transparent
+                                              : const Color.fromRGBO(
+                                                  15, 119, 240, 1),
+                                          borderRadius: const BorderRadius.only(
+                                            bottomRight: Radius.circular(9),
+                                            topRight: Radius.circular(9),
+                                          ),
+                                        ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -2156,8 +2446,12 @@ class _MafiaState extends State<Mafia> {
                         Container(
                           clipBehavior: Clip.hardEdge,
                           decoration: BoxDecoration(
+                            border: Border.all(
+                              color: colorFrame7,
+                              width: 1.0,
+                            ),
                             color: deletePlayer7
-                                ? Colors.white
+                                ? colorFrameInside7
                                 : Colors.transparent,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
@@ -2181,8 +2475,8 @@ class _MafiaState extends State<Mafia> {
                                               style: TextStyle(
                                                 fontSize: 22.0,
                                                 color: deletePlayer7
-                                                    ? cleanColor = Colors.black
-                                                    : cleanColor =
+                                                    ? cleanColor7 = Colors.black
+                                                    : cleanColor7 =
                                                         const Color(0x66181818),
                                                 fontWeight: FontWeight.w700,
                                               ),
@@ -2198,8 +2492,8 @@ class _MafiaState extends State<Mafia> {
                                         '7',
                                         style: TextStyle(
                                           color: deletePlayer7
-                                              ? cleanColor = Colors.black
-                                              : cleanColor = const Color(
+                                              ? cleanColor7 = Colors.black
+                                              : cleanColor7 = const Color(
                                                   0x80999999,
                                                 ),
                                           fontSize: 17.0,
@@ -2220,6 +2514,7 @@ class _MafiaState extends State<Mafia> {
                                           setState(() {
                                             space7 = true;
                                             deletePlayer7 = !deletePlayer7;
+                                            changeColorFrame7();
                                           });
                                         },
                                         child: Text(
@@ -2227,8 +2522,9 @@ class _MafiaState extends State<Mafia> {
                                           style: TextStyle(
                                             fontSize: 17.0,
                                             color: deletePlayer7
-                                                ? cleanColor = Colors.red
-                                                : cleanColor =
+                                                ? const Color.fromRGBO(
+                                                    15, 119, 240, 1)
+                                                : cleanColor7 =
                                                     const Color(0x80999999),
                                             fontWeight: FontWeight.w700,
                                           ),
@@ -2256,7 +2552,8 @@ class _MafiaState extends State<Mafia> {
                                                 thickness: 1,
                                                 indent: 11,
                                                 endIndent: 11,
-                                                color: Colors.grey,
+                                                color: Color.fromRGBO(
+                                                    250, 225, 231, 1),
                                               ),
                                             ),
                                             SizedBox(
@@ -2272,6 +2569,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls7 > 0) {
                                                       fouls7--;
+                                                      changeColorFouls7();
                                                     }
                                                   });
                                                 },
@@ -2291,9 +2589,9 @@ class _MafiaState extends State<Mafia> {
                                               width: 24,
                                               child: Text(
                                                 '$fouls7',
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                   fontSize: 17.0,
-                                                  color: Colors.black,
+                                                  color: colorFouls7,
                                                 ),
                                               ),
                                             ),
@@ -2310,6 +2608,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls7 < 4) {
                                                       fouls7++;
+                                                      changeColorFouls7();
                                                     }
                                                   });
                                                 },
@@ -2331,7 +2630,8 @@ class _MafiaState extends State<Mafia> {
                                                       thickness: 1,
                                                       indent: 11,
                                                       endIndent: 11,
-                                                      color: Colors.grey,
+                                                      color: Color.fromRGBO(
+                                                          250, 225, 231, 1),
                                                     ),
                                                   )
                                                 : const SizedBox(),
@@ -2348,12 +2648,13 @@ class _MafiaState extends State<Mafia> {
                                           : const Color.fromRGBO(
                                               15, 119, 240, 1),
                                       height: double.infinity,
-                                      child: TextButton(
-                                        style: TextButton.styleFrom(
-                                          minimumSize: const Size(
-                                            1.0,
-                                            1.0,
-                                          ),
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.thumb_up_alt_outlined,
+                                          color: space7
+                                              ? const Color.fromRGBO(
+                                                  15, 119, 240, 1)
+                                              : Colors.white,
                                         ),
                                         onPressed: () {
                                           setState(() {
@@ -2364,15 +2665,6 @@ class _MafiaState extends State<Mafia> {
                                             isVotingContainer();
                                           });
                                         },
-                                        child: const Text(
-                                          '👍',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontSize: 22.0,
-                                            color:
-                                                Color.fromRGBO(15, 119, 240, 1),
-                                          ),
-                                        ),
                                       ),
                                     )
                                   : const SizedBox(
@@ -2382,10 +2674,16 @@ class _MafiaState extends State<Mafia> {
                                   ? const SizedBox()
                                   : Expanded(
                                       child: Container(
-                                        color: space7
-                                            ? Colors.transparent
-                                            : const Color.fromRGBO(
-                                                15, 119, 240, 1),
+                                        decoration: BoxDecoration(
+                                          color: space7
+                                              ? Colors.transparent
+                                              : const Color.fromRGBO(
+                                                  15, 119, 240, 1),
+                                          borderRadius: const BorderRadius.only(
+                                            bottomRight: Radius.circular(9),
+                                            topRight: Radius.circular(9),
+                                          ),
+                                        ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -2475,8 +2773,12 @@ class _MafiaState extends State<Mafia> {
                         Container(
                           clipBehavior: Clip.hardEdge,
                           decoration: BoxDecoration(
+                            border: Border.all(
+                              color: colorFrame8,
+                              width: 1.0,
+                            ),
                             color: deletePlayer8
-                                ? Colors.white
+                                ? colorFrameInside8
                                 : Colors.transparent,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
@@ -2500,8 +2802,8 @@ class _MafiaState extends State<Mafia> {
                                               style: TextStyle(
                                                 fontSize: 22.0,
                                                 color: deletePlayer8
-                                                    ? cleanColor = Colors.black
-                                                    : cleanColor =
+                                                    ? cleanColor8 = Colors.black
+                                                    : cleanColor8 =
                                                         const Color(0x66181818),
                                                 fontWeight: FontWeight.w700,
                                               ),
@@ -2517,8 +2819,8 @@ class _MafiaState extends State<Mafia> {
                                         '8',
                                         style: TextStyle(
                                           color: deletePlayer8
-                                              ? cleanColor = Colors.black
-                                              : cleanColor = const Color(
+                                              ? cleanColor8 = Colors.black
+                                              : cleanColor8 = const Color(
                                                   0x80999999,
                                                 ),
                                           fontSize: 17.0,
@@ -2539,6 +2841,7 @@ class _MafiaState extends State<Mafia> {
                                           setState(() {
                                             space8 = true;
                                             deletePlayer8 = !deletePlayer8;
+                                            changeColorFrame8();
                                           });
                                         },
                                         child: Text(
@@ -2546,8 +2849,9 @@ class _MafiaState extends State<Mafia> {
                                           style: TextStyle(
                                             fontSize: 17.0,
                                             color: deletePlayer8
-                                                ? cleanColor = Colors.red
-                                                : cleanColor =
+                                                ? const Color.fromRGBO(
+                                                    15, 119, 240, 1)
+                                                : cleanColor8 =
                                                     const Color(0x80999999),
                                             fontWeight: FontWeight.w700,
                                           ),
@@ -2575,7 +2879,8 @@ class _MafiaState extends State<Mafia> {
                                                 thickness: 1,
                                                 indent: 11,
                                                 endIndent: 11,
-                                                color: Colors.grey,
+                                                color: Color.fromRGBO(
+                                                    250, 225, 231, 1),
                                               ),
                                             ),
                                             SizedBox(
@@ -2591,6 +2896,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls8 > 0) {
                                                       fouls8--;
+                                                      changeColorFouls8();
                                                     }
                                                   });
                                                 },
@@ -2610,9 +2916,9 @@ class _MafiaState extends State<Mafia> {
                                               width: 24,
                                               child: Text(
                                                 '$fouls8',
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                   fontSize: 17.0,
-                                                  color: Colors.black,
+                                                  color: colorFouls8,
                                                 ),
                                               ),
                                             ),
@@ -2629,6 +2935,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls8 < 4) {
                                                       fouls8++;
+                                                      changeColorFouls8();
                                                     }
                                                   });
                                                 },
@@ -2650,7 +2957,8 @@ class _MafiaState extends State<Mafia> {
                                                       thickness: 1,
                                                       indent: 11,
                                                       endIndent: 11,
-                                                      color: Colors.grey,
+                                                      color: Color.fromRGBO(
+                                                          250, 225, 231, 1),
                                                     ),
                                                   )
                                                 : const SizedBox(),
@@ -2667,12 +2975,13 @@ class _MafiaState extends State<Mafia> {
                                           : const Color.fromRGBO(
                                               15, 119, 240, 1),
                                       height: double.infinity,
-                                      child: TextButton(
-                                        style: TextButton.styleFrom(
-                                          minimumSize: const Size(
-                                            1.0,
-                                            1.0,
-                                          ),
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.thumb_up_alt_outlined,
+                                          color: space8
+                                              ? const Color.fromRGBO(
+                                                  15, 119, 240, 1)
+                                              : Colors.white,
                                         ),
                                         onPressed: () {
                                           setState(() {
@@ -2683,15 +2992,6 @@ class _MafiaState extends State<Mafia> {
                                             isVotingContainer();
                                           });
                                         },
-                                        child: const Text(
-                                          '👍',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontSize: 22.0,
-                                            color:
-                                                Color.fromRGBO(15, 119, 240, 1),
-                                          ),
-                                        ),
                                       ),
                                     )
                                   : const SizedBox(
@@ -2701,10 +3001,16 @@ class _MafiaState extends State<Mafia> {
                                   ? const SizedBox()
                                   : Expanded(
                                       child: Container(
-                                        color: space8
-                                            ? Colors.transparent
-                                            : const Color.fromRGBO(
-                                                15, 119, 240, 1),
+                                        decoration: BoxDecoration(
+                                          color: space8
+                                              ? Colors.transparent
+                                              : const Color.fromRGBO(
+                                                  15, 119, 240, 1),
+                                          borderRadius: const BorderRadius.only(
+                                            bottomRight: Radius.circular(9),
+                                            topRight: Radius.circular(9),
+                                          ),
+                                        ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -2794,8 +3100,12 @@ class _MafiaState extends State<Mafia> {
                         Container(
                           clipBehavior: Clip.hardEdge,
                           decoration: BoxDecoration(
+                            border: Border.all(
+                              color: colorFrame9,
+                              width: 1.0,
+                            ),
                             color: deletePlayer9
-                                ? Colors.white
+                                ? colorFrameInside9
                                 : Colors.transparent,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
@@ -2819,8 +3129,8 @@ class _MafiaState extends State<Mafia> {
                                               style: TextStyle(
                                                 fontSize: 22.0,
                                                 color: deletePlayer9
-                                                    ? cleanColor = Colors.black
-                                                    : cleanColor =
+                                                    ? cleanColor9 = Colors.black
+                                                    : cleanColor9 =
                                                         const Color(0x66181818),
                                                 fontWeight: FontWeight.w700,
                                               ),
@@ -2836,8 +3146,8 @@ class _MafiaState extends State<Mafia> {
                                         '9',
                                         style: TextStyle(
                                           color: deletePlayer9
-                                              ? cleanColor = Colors.black
-                                              : cleanColor = const Color(
+                                              ? cleanColor9 = Colors.black
+                                              : cleanColor9 = const Color(
                                                   0x80999999,
                                                 ),
                                           fontSize: 17.0,
@@ -2858,6 +3168,7 @@ class _MafiaState extends State<Mafia> {
                                           setState(() {
                                             space9 = true;
                                             deletePlayer9 = !deletePlayer9;
+                                            changeColorFrame9();
                                           });
                                         },
                                         child: Text(
@@ -2865,8 +3176,9 @@ class _MafiaState extends State<Mafia> {
                                           style: TextStyle(
                                             fontSize: 17.0,
                                             color: deletePlayer9
-                                                ? cleanColor = Colors.red
-                                                : cleanColor =
+                                                ? const Color.fromRGBO(
+                                                    15, 119, 240, 1)
+                                                : cleanColor9 =
                                                     const Color(0x80999999),
                                             fontWeight: FontWeight.w700,
                                           ),
@@ -2894,7 +3206,8 @@ class _MafiaState extends State<Mafia> {
                                                 thickness: 1,
                                                 indent: 11,
                                                 endIndent: 11,
-                                                color: Colors.grey,
+                                                color: Color.fromRGBO(
+                                                    250, 225, 231, 1),
                                               ),
                                             ),
                                             SizedBox(
@@ -2910,6 +3223,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls9 > 0) {
                                                       fouls9--;
+                                                      changeColorFouls9();
                                                     }
                                                   });
                                                 },
@@ -2929,9 +3243,9 @@ class _MafiaState extends State<Mafia> {
                                               width: 24,
                                               child: Text(
                                                 '$fouls9',
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                   fontSize: 17.0,
-                                                  color: Colors.black,
+                                                  color: colorFouls9,
                                                 ),
                                               ),
                                             ),
@@ -2948,6 +3262,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls9 < 4) {
                                                       fouls9++;
+                                                      changeColorFouls9();
                                                     }
                                                   });
                                                 },
@@ -2969,7 +3284,8 @@ class _MafiaState extends State<Mafia> {
                                                       thickness: 1,
                                                       indent: 11,
                                                       endIndent: 11,
-                                                      color: Colors.grey,
+                                                      color: Color.fromRGBO(
+                                                          250, 225, 231, 1),
                                                     ),
                                                   )
                                                 : const SizedBox(),
@@ -2986,12 +3302,13 @@ class _MafiaState extends State<Mafia> {
                                           : const Color.fromRGBO(
                                               15, 119, 240, 1),
                                       height: double.infinity,
-                                      child: TextButton(
-                                        style: TextButton.styleFrom(
-                                          minimumSize: const Size(
-                                            1.0,
-                                            1.0,
-                                          ),
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.thumb_up_alt_outlined,
+                                          color: space9
+                                              ? const Color.fromRGBO(
+                                                  15, 119, 240, 1)
+                                              : Colors.white,
                                         ),
                                         onPressed: () {
                                           setState(() {
@@ -3002,15 +3319,6 @@ class _MafiaState extends State<Mafia> {
                                             isVotingContainer();
                                           });
                                         },
-                                        child: const Text(
-                                          '👍',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontSize: 22.0,
-                                            color:
-                                                Color.fromRGBO(15, 119, 240, 1),
-                                          ),
-                                        ),
                                       ),
                                     )
                                   : const SizedBox(
@@ -3020,10 +3328,16 @@ class _MafiaState extends State<Mafia> {
                                   ? const SizedBox()
                                   : Expanded(
                                       child: Container(
-                                        color: space9
-                                            ? Colors.transparent
-                                            : const Color.fromRGBO(
-                                                15, 119, 240, 1),
+                                        decoration: BoxDecoration(
+                                          color: space9
+                                              ? Colors.transparent
+                                              : const Color.fromRGBO(
+                                                  15, 119, 240, 1),
+                                          borderRadius: const BorderRadius.only(
+                                            bottomRight: Radius.circular(9),
+                                            topRight: Radius.circular(9),
+                                          ),
+                                        ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -3113,8 +3427,12 @@ class _MafiaState extends State<Mafia> {
                         Container(
                           clipBehavior: Clip.hardEdge,
                           decoration: BoxDecoration(
+                            border: Border.all(
+                              color: colorFrame10,
+                              width: 1.0,
+                            ),
                             color: deletePlayer10
-                                ? Colors.white
+                                ? colorFrameInside10
                                 : Colors.transparent,
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(10)),
@@ -3138,8 +3456,9 @@ class _MafiaState extends State<Mafia> {
                                               style: TextStyle(
                                                 fontSize: 22.0,
                                                 color: deletePlayer10
-                                                    ? cleanColor = Colors.black
-                                                    : cleanColor =
+                                                    ? cleanColor10 =
+                                                        Colors.black
+                                                    : cleanColor10 =
                                                         const Color(0x66181818),
                                                 fontWeight: FontWeight.w700,
                                               ),
@@ -3155,8 +3474,8 @@ class _MafiaState extends State<Mafia> {
                                         '10',
                                         style: TextStyle(
                                           color: deletePlayer10
-                                              ? cleanColor = Colors.black
-                                              : cleanColor = const Color(
+                                              ? cleanColor10 = Colors.black
+                                              : cleanColor10 = const Color(
                                                   0x80999999,
                                                 ),
                                           fontSize: 17.0,
@@ -3177,6 +3496,7 @@ class _MafiaState extends State<Mafia> {
                                           setState(() {
                                             space10 = true;
                                             deletePlayer10 = !deletePlayer10;
+                                            changeColorFrame10();
                                           });
                                         },
                                         child: Text(
@@ -3184,8 +3504,9 @@ class _MafiaState extends State<Mafia> {
                                           style: TextStyle(
                                             fontSize: 17.0,
                                             color: deletePlayer10
-                                                ? cleanColor = Colors.red
-                                                : cleanColor =
+                                                ? const Color.fromRGBO(
+                                                    15, 119, 240, 1)
+                                                : cleanColor10 =
                                                     const Color(0x80999999),
                                             fontWeight: FontWeight.w700,
                                           ),
@@ -3213,7 +3534,8 @@ class _MafiaState extends State<Mafia> {
                                                 thickness: 1,
                                                 indent: 11,
                                                 endIndent: 11,
-                                                color: Colors.grey,
+                                                color: Color.fromRGBO(
+                                                    250, 225, 231, 1),
                                               ),
                                             ),
                                             SizedBox(
@@ -3229,6 +3551,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls10 > 0) {
                                                       fouls10--;
+                                                      changeColorFouls10();
                                                     }
                                                   });
                                                 },
@@ -3248,9 +3571,9 @@ class _MafiaState extends State<Mafia> {
                                               width: 24,
                                               child: Text(
                                                 '$fouls10',
-                                                style: const TextStyle(
+                                                style: TextStyle(
                                                   fontSize: 17.0,
-                                                  color: Colors.black,
+                                                  color: colorFouls10,
                                                 ),
                                               ),
                                             ),
@@ -3267,6 +3590,7 @@ class _MafiaState extends State<Mafia> {
                                                   setState(() {
                                                     if (fouls10 < 4) {
                                                       fouls10++;
+                                                      changeColorFouls10();
                                                     }
                                                   });
                                                 },
@@ -3288,7 +3612,8 @@ class _MafiaState extends State<Mafia> {
                                                       thickness: 1,
                                                       indent: 11,
                                                       endIndent: 11,
-                                                      color: Colors.grey,
+                                                      color: Color.fromRGBO(
+                                                          250, 225, 231, 1),
                                                     ),
                                                   )
                                                 : const SizedBox(),
@@ -3305,12 +3630,13 @@ class _MafiaState extends State<Mafia> {
                                           : const Color.fromRGBO(
                                               15, 119, 240, 1),
                                       height: double.infinity,
-                                      child: TextButton(
-                                        style: TextButton.styleFrom(
-                                          minimumSize: const Size(
-                                            1.0,
-                                            1.0,
-                                          ),
+                                      child: IconButton(
+                                        icon: Icon(
+                                          Icons.thumb_up_alt_outlined,
+                                          color: space10
+                                              ? const Color.fromRGBO(
+                                                  15, 119, 240, 1)
+                                              : Colors.white,
                                         ),
                                         onPressed: () {
                                           setState(() {
@@ -3321,15 +3647,6 @@ class _MafiaState extends State<Mafia> {
                                             isVotingContainer();
                                           });
                                         },
-                                        child: const Text(
-                                          '👍',
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                            fontSize: 22.0,
-                                            color:
-                                                Color.fromRGBO(15, 119, 240, 1),
-                                          ),
-                                        ),
                                       ),
                                     )
                                   : const SizedBox(
@@ -3339,10 +3656,16 @@ class _MafiaState extends State<Mafia> {
                                   ? const SizedBox()
                                   : Expanded(
                                       child: Container(
-                                        color: space10
-                                            ? Colors.transparent
-                                            : const Color.fromRGBO(
-                                                15, 119, 240, 1),
+                                        decoration: BoxDecoration(
+                                          color: space10
+                                              ? Colors.transparent
+                                              : const Color.fromRGBO(
+                                                  15, 119, 240, 1),
+                                          borderRadius: const BorderRadius.only(
+                                            bottomRight: Radius.circular(9),
+                                            topRight: Radius.circular(9),
+                                          ),
+                                        ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
