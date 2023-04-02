@@ -3755,7 +3755,20 @@ class _MafiaState extends State<Mafia> {
                       ],
                     ),
                   ),
-                  votingContainer
+                  const SizedBox(
+                    height: 114,
+                  ),
+                ],
+              ),
+              const Align(
+                alignment: Alignment.bottomCenter,
+                child: TimerPlayer(),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 48.0),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: votingContainer
                       ? Container(
                           margin: const EdgeInsets.only(top: 2),
                           padding: const EdgeInsets.only(
@@ -3837,14 +3850,7 @@ class _MafiaState extends State<Mafia> {
                       : const SizedBox(
                           height: 66,
                         ),
-                  const SizedBox(
-                    height: 48,
-                  ),
-                ],
-              ),
-              const Align(
-                alignment: Alignment.bottomCenter,
-                child: TimerPlayer(),
+                ),
               ),
             ],
           ),
