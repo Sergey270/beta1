@@ -300,11 +300,11 @@ class _GetNumbersState extends State<GetNumbers> {
                       children: [
                         SizedBox(
                           height: MediaQuery.of(context).size.height -
+                              MediaQuery.of(context).viewPadding.top -
                               AppBar().preferredSize.height -
                               MediaQuery.of(context).padding.top -
-                              MediaQuery.of(context).padding.bottom -
                               kBottomNavigationBarHeight -
-                              80,
+                              64,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
@@ -327,7 +327,6 @@ class _GetNumbersState extends State<GetNumbers> {
                                       _colorBox();
                                       control();
                                       changeTextBigContainer();
-
                                       changeGetNumberButton();
                                     });
                                   },
