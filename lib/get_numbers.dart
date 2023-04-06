@@ -303,7 +303,8 @@ class _GetNumbersState extends State<GetNumbers> {
                               AppBar().preferredSize.height -
                               MediaQuery.of(context).padding.top -
                               MediaQuery.of(context).padding.bottom -
-                              kBottomNavigationBarHeight-80,
+                              kBottomNavigationBarHeight -
+                              80,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
@@ -352,21 +353,24 @@ class _GetNumbersState extends State<GetNumbers> {
                                     borderRadius: const BorderRadius.all(
                                         Radius.circular(8)),
                                   ),
-                                  child: Column(
-                                    children: [
-                                      const Padding(
-                                          padding: EdgeInsets.all(18)),
-                                      Text(textNumber[indexNumber2],
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            color: numberColorBox2,
-                                            fontSize: 50.0,
-                                            fontWeight: FontWeight.w700,
-                                          ),
-                                          overflow: TextOverflow.ellipsis),
-                                      const Padding(padding: EdgeInsets.all(4)),
-                                      textContainerSmall,
-                                    ],
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 26.0, bottom: 21),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(textNumber[indexNumber2],
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              color: numberColorBox2,
+                                              fontSize: 50.0,
+                                              fontWeight: FontWeight.w700,
+                                            ),
+                                            overflow: TextOverflow.ellipsis),
+                                        textContainerSmall,
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
@@ -378,22 +382,27 @@ class _GetNumbersState extends State<GetNumbers> {
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(8)),
                                 ),
-                                child: Column(
-                                  children: [
-                                    const Padding(padding: EdgeInsets.all(14)),
-                                    Text(
-                                      textNumber[indexNumber],
-                                      textAlign: TextAlign.center,
-                                      style: const TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 100.0,
-                                        fontWeight: FontWeight.w700,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    top: 28.0,
+                                    bottom: 21.0,
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        textNumber[indexNumber],
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 100.0,
+                                          fontWeight: FontWeight.w700,
+                                        ),
                                       ),
-                                    ),
-                                    const Padding(padding: EdgeInsets.all(14)),
-                                    textContainer,
-                                    const Padding(padding: EdgeInsets.all(8)),
-                                  ],
+                                      textContainer,
+                                    ],
+                                  ),
                                 ),
                               ),
                               Expanded(
