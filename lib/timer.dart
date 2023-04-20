@@ -32,15 +32,13 @@ class _TimerPlayerState extends State<TimerPlayer> {
   }
 
   void start() {
-    if (_waitTime >= 0) {
-      setState(() {
-        isStart = true;
-      });
-      _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-        _waitTime++;
-        _calculationTime();
-      });
-    }
+    setState(() {
+      isStart = true;
+    });
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      _waitTime++;
+      _calculationTime();
+    });
   }
 
   void restart() {

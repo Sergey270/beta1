@@ -341,76 +341,79 @@ class _GetNumbersState extends State<GetNumbers> {
                           top: 37, bottom: 0, left: 14, right: 14),
                       child: Column(
                         children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                child: Container(
-                                  height: 144,
-                                  margin: const EdgeInsets.only(right: 14.0),
-                                  decoration: BoxDecoration(
-                                    color: _containerColor,
-                                    borderRadius: const BorderRadius.all(
-                                        Radius.circular(8)),
+                          SizedBox(
+                            width: 420,
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child: Container(
+                                    height: 144,
+                                    margin: const EdgeInsets.only(right: 14.0),
+                                    decoration: BoxDecoration(
+                                      color: _containerColor,
+                                      borderRadius: const BorderRadius.all(
+                                          Radius.circular(8)),
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                          top: 26.0, bottom: 21),
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(textNumber[indexNumber2],
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                color: numberColorBox2,
+                                                fontSize: 50.0,
+                                                fontWeight: FontWeight.w700,
+                                              ),
+                                              overflow: TextOverflow.ellipsis),
+                                          textContainerSmall,
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  height: 207,
+                                  width: 163,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(8)),
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        top: 26.0, bottom: 21),
+                                      top: 28.0,
+                                      bottom: 21.0,
+                                    ),
                                     child: Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(textNumber[indexNumber2],
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: numberColorBox2,
-                                              fontSize: 50.0,
-                                              fontWeight: FontWeight.w700,
-                                            ),
-                                            overflow: TextOverflow.ellipsis),
-                                        textContainerSmall,
+                                        Text(
+                                          textNumber[indexNumber],
+                                          textAlign: TextAlign.center,
+                                          style: const TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 100.0,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                        textContainer,
                                       ],
                                     ),
                                   ),
                                 ),
-                              ),
-                              Container(
-                                height: 207,
-                                width: 163,
-                                decoration: const BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(8)),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(
-                                    top: 28.0,
-                                    bottom: 21.0,
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        textNumber[indexNumber],
-                                        textAlign: TextAlign.center,
-                                        style: const TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 100.0,
-                                          fontWeight: FontWeight.w700,
-                                        ),
-                                      ),
-                                      textContainer,
-                                    ],
+                                Expanded(
+                                  child: Container(
+                                    height: 144,
+                                    margin: const EdgeInsets.only(left: 14.0),
                                   ),
                                 ),
-                              ),
-                              Expanded(
-                                child: Container(
-                                  height: 144,
-                                  margin: const EdgeInsets.only(left: 14.0),
-                                ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                           const Padding(padding: EdgeInsets.only(bottom: 31)),
                           Container(
