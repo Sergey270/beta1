@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'main_page.dart';
-import 'main_screen_widget.dart';
+
 
 void main() {
   //  lock portrait mode
