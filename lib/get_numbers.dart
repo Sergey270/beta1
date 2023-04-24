@@ -302,7 +302,7 @@ class _GetNumbersState extends State<GetNumbers> {
                               MediaQuery.of(context).viewPadding.top -
                               AppBar().preferredSize.height -
                               MediaQuery.of(context).padding.top -
-                             14,
+                              114,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
