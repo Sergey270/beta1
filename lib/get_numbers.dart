@@ -281,7 +281,7 @@ class _GetNumbersState extends State<GetNumbers> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const MainScreenWidget()),
+                        builder: (context) => const GetNumbers()),
                   );
                 },
               ),
@@ -303,8 +303,7 @@ class _GetNumbersState extends State<GetNumbers> {
                               MediaQuery.of(context).viewPadding.top -
                               AppBar().preferredSize.height -
                               MediaQuery.of(context).padding.top -
-                              kBottomNavigationBarHeight -
-                              64,
+                             14,
                         ),
                         Padding(
                           padding: const EdgeInsets.only(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'main_screen_widget.dart';
 import 'timer.dart';
 
 class Mafia extends StatefulWidget {
@@ -463,7 +462,7 @@ class _MafiaState extends State<Mafia> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const MainScreenWidget()),
+                      builder: (context) => const Mafia()),
                 );
               },
             ),
@@ -3760,12 +3759,17 @@ class _MafiaState extends State<Mafia> {
                   ),
                 ],
               ),
-              const Align(
-                alignment: Alignment.bottomCenter,
-                child: TimerPlayer(),
+                const Padding(
+                  padding: EdgeInsets.only(bottom:  50) ,
+                  child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child:
+                  TimerPlayer(),
+
               ),
+                ),
               Padding(
-                padding: const EdgeInsets.only(bottom: 48.0),
+                padding: const EdgeInsets.only(bottom: 48.0 + 50) ,
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: votingContainer
