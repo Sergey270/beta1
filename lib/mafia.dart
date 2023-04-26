@@ -14,6 +14,7 @@ class _MafiaState extends State<Mafia> {
   late bool votingContainer;
 
   Color colorFouls = Colors.grey;
+  Color minusColor = Colors.grey;
   Color colorFrameInside = Colors.white;
   Color colorFrame = Colors.transparent;
   bool colorFrameBool = false;
@@ -26,6 +27,7 @@ class _MafiaState extends State<Mafia> {
   int voting = 0;
 
   Color colorFouls2 = Colors.grey;
+  Color minusColor2 = Colors.grey;
   Color colorFrameInside2 = Colors.white;
   Color colorFrame2 = Colors.transparent;
   bool colorFrameBool2 = false;
@@ -37,6 +39,7 @@ class _MafiaState extends State<Mafia> {
   int voting2 = 0;
 
   Color colorFouls3 = Colors.grey;
+  Color minusColor3 = Colors.grey;
   Color colorFrameInside3 = Colors.white;
   Color colorFrame3 = Colors.transparent;
   bool colorFrameBool3 = false;
@@ -48,6 +51,7 @@ class _MafiaState extends State<Mafia> {
   int voting3 = 0;
 
   Color colorFouls4 = Colors.grey;
+  Color minusColor4 = Colors.grey;
   Color colorFrameInside4 = Colors.white;
   Color colorFrame4 = Colors.transparent;
   bool colorFrameBool4 = false;
@@ -59,6 +63,7 @@ class _MafiaState extends State<Mafia> {
   int voting4 = 0;
 
   Color colorFouls5 = Colors.grey;
+  Color minusColor5 = Colors.grey;
   Color colorFrameInside5 = Colors.white;
   Color colorFrame5 = Colors.transparent;
   bool colorFrameBool5 = false;
@@ -70,6 +75,7 @@ class _MafiaState extends State<Mafia> {
   int voting5 = 0;
 
   Color colorFouls6 = Colors.grey;
+  Color minusColor6 = Colors.grey;
   Color colorFrameInside6 = Colors.white;
   Color colorFrame6 = Colors.transparent;
   bool colorFrameBool6 = false;
@@ -81,6 +87,7 @@ class _MafiaState extends State<Mafia> {
   int voting6 = 0;
 
   Color colorFouls7 = Colors.grey;
+  Color minusColor7 = Colors.grey;
   Color colorFrameInside7 = Colors.white;
   Color colorFrame7 = Colors.transparent;
   bool colorFrameBool7 = false;
@@ -92,6 +99,7 @@ class _MafiaState extends State<Mafia> {
   int voting7 = 0;
 
   Color colorFouls8 = Colors.grey;
+  Color minusColor8 = Colors.grey;
   Color colorFrameInside8 = Colors.white;
   Color colorFrame8 = Colors.transparent;
   bool colorFrameBool8 = false;
@@ -103,6 +111,7 @@ class _MafiaState extends State<Mafia> {
   int voting8 = 0;
 
   Color colorFouls9 = Colors.grey;
+  Color minusColor9 = Colors.grey;
   Color colorFrameInside9 = Colors.white;
   Color colorFrame9 = Colors.transparent;
   bool colorFrameBool9 = false;
@@ -114,6 +123,7 @@ class _MafiaState extends State<Mafia> {
   int voting9 = 0;
 
   Color colorFouls10 = Colors.grey;
+  Color minusColor10 = Colors.grey;
   Color colorFrameInside10 = Colors.white;
   Color colorFrame10 = Colors.transparent;
   bool colorFrameBool10 = false;
@@ -166,9 +176,11 @@ class _MafiaState extends State<Mafia> {
 
   void changeColorFouls() {
     if (fouls == 0) {
+      minusColor = Colors.grey;
       colorFouls = Colors.grey;
     } else if (fouls >= 1 && fouls < 3) {
       colorFouls = Colors.black;
+      minusColor = const Color.fromRGBO(15, 119, 240, 1);
       colorFrameInside = Colors.white;
       colorFrame = Colors.transparent;
       colorFrameBool = false;
@@ -189,9 +201,11 @@ class _MafiaState extends State<Mafia> {
 
   void changeColorFouls2() {
     if (fouls2 == 0) {
+      minusColor2 = Colors.grey;
       colorFouls2 = Colors.grey;
     } else if (fouls2 >= 1 && fouls2 < 3) {
       colorFouls2 = Colors.black;
+      minusColor2 = const Color.fromRGBO(15, 119, 240, 1);
       colorFrameInside2 = Colors.white;
       colorFrame2 = Colors.transparent;
       colorFrameBool2 = false;
@@ -212,9 +226,11 @@ class _MafiaState extends State<Mafia> {
 
   void changeColorFouls3() {
     if (fouls3 == 0) {
+      minusColor3 = Colors.grey;
       colorFouls3 = Colors.grey;
     } else if (fouls3 >= 1 && fouls3 < 3) {
       colorFouls3 = Colors.black;
+      minusColor3 = const Color.fromRGBO(15, 119, 240, 1);
       colorFrameInside3 = Colors.white;
       colorFrame3 = Colors.transparent;
       colorFrameBool3 = false;
@@ -235,9 +251,11 @@ class _MafiaState extends State<Mafia> {
 
   void changeColorFouls4() {
     if (fouls4 == 0) {
+      minusColor4 = Colors.grey;
       colorFouls4 = Colors.grey;
     } else if (fouls4 >= 1 && fouls4 < 3) {
       colorFouls4 = Colors.black;
+      minusColor4 = const Color.fromRGBO(15, 119, 240, 1);
       colorFrameInside4 = Colors.white;
       colorFrame4 = Colors.transparent;
       colorFrameBool4 = false;
@@ -258,9 +276,11 @@ class _MafiaState extends State<Mafia> {
 
   void changeColorFouls5() {
     if (fouls5 == 0) {
+      minusColor5 = Colors.grey;
       colorFouls5 = Colors.grey;
     } else if (fouls5 >= 1 && fouls5 < 3) {
       colorFouls5 = Colors.black;
+      minusColor5 = const Color.fromRGBO(15, 119, 240, 1);
       colorFrameInside5 = Colors.white;
       colorFrame5 = Colors.transparent;
       colorFrameBool5 = false;
@@ -281,9 +301,11 @@ class _MafiaState extends State<Mafia> {
 
   void changeColorFouls6() {
     if (fouls6 == 0) {
+      minusColor6 = Colors.grey;
       colorFouls6 = Colors.grey;
     } else if (fouls6 >= 1 && fouls6 < 3) {
       colorFouls6 = Colors.black;
+      minusColor6 = const Color.fromRGBO(15, 119, 240, 1);
       colorFrameInside6 = Colors.white;
       colorFrame6 = Colors.transparent;
       colorFrameBool6 = false;
@@ -304,9 +326,11 @@ class _MafiaState extends State<Mafia> {
 
   void changeColorFouls7() {
     if (fouls7 == 0) {
+      minusColor7 = Colors.grey;
       colorFouls7 = Colors.grey;
     } else if (fouls7 >= 1 && fouls7 < 3) {
       colorFouls7 = Colors.black;
+      minusColor7 = const Color.fromRGBO(15, 119, 240, 1);
       colorFrameInside7 = Colors.white;
       colorFrame7 = Colors.transparent;
       colorFrameBool7 = false;
@@ -327,9 +351,11 @@ class _MafiaState extends State<Mafia> {
 
   void changeColorFouls8() {
     if (fouls8 == 0) {
+      minusColor8 = Colors.grey;
       colorFouls8 = Colors.grey;
     } else if (fouls8 >= 1 && fouls8 < 3) {
       colorFouls8 = Colors.black;
+      minusColor8 = const Color.fromRGBO(15, 119, 240, 1);
       colorFrameInside8 = Colors.white;
       colorFrame8 = Colors.transparent;
       colorFrameBool8 = false;
@@ -350,9 +376,11 @@ class _MafiaState extends State<Mafia> {
 
   void changeColorFouls9() {
     if (fouls9 == 0) {
+      minusColor9 = Colors.grey;
       colorFouls9 = Colors.grey;
     } else if (fouls9 >= 1 && fouls9 < 3) {
       colorFouls9 = Colors.black;
+      minusColor9 = const Color.fromRGBO(15, 119, 240, 1);
       colorFrameInside9 = Colors.white;
       colorFrame9 = Colors.transparent;
       colorFrameBool9 = false;
@@ -373,9 +401,11 @@ class _MafiaState extends State<Mafia> {
 
   void changeColorFouls10() {
     if (fouls10 == 0) {
+      minusColor10 = Colors.grey;
       colorFouls10 = Colors.grey;
     } else if (fouls10 >= 1 && fouls10 < 3) {
       colorFouls10 = Colors.black;
+      minusColor10 = const Color.fromRGBO(15, 119, 240, 1);
       colorFrameInside10 = Colors.white;
       colorFrame10 = Colors.transparent;
       colorFrameBool10 = false;
@@ -461,8 +491,7 @@ class _MafiaState extends State<Mafia> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const Mafia()),
+                  MaterialPageRoute(builder: (context) => const Mafia()),
                 );
               },
             ),
@@ -610,12 +639,11 @@ class _MafiaState extends State<Mafia> {
                                                     }
                                                   });
                                                 },
-                                                child: const Text(
+                                                child: Text(
                                                   '-',
                                                   style: TextStyle(
                                                     fontSize: 17.0,
-                                                    color: Color.fromRGBO(
-                                                        15, 119, 240, 1),
+                                                    color: minusColor,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
@@ -937,12 +965,11 @@ class _MafiaState extends State<Mafia> {
                                                     }
                                                   });
                                                 },
-                                                child: const Text(
+                                                child: Text(
                                                   '-',
                                                   style: TextStyle(
                                                     fontSize: 17.0,
-                                                    color: Color.fromRGBO(
-                                                        15, 119, 240, 1),
+                                                    color: minusColor2,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
@@ -1264,12 +1291,11 @@ class _MafiaState extends State<Mafia> {
                                                     }
                                                   });
                                                 },
-                                                child: const Text(
+                                                child: Text(
                                                   '-',
                                                   style: TextStyle(
                                                     fontSize: 17.0,
-                                                    color: Color.fromRGBO(
-                                                        15, 119, 240, 1),
+                                                    color: minusColor3,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
@@ -1591,12 +1617,11 @@ class _MafiaState extends State<Mafia> {
                                                     }
                                                   });
                                                 },
-                                                child: const Text(
+                                                child: Text(
                                                   '-',
                                                   style: TextStyle(
                                                     fontSize: 17.0,
-                                                    color: Color.fromRGBO(
-                                                        15, 119, 240, 1),
+                                                    color: minusColor4,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
@@ -1918,12 +1943,11 @@ class _MafiaState extends State<Mafia> {
                                                     }
                                                   });
                                                 },
-                                                child: const Text(
+                                                child: Text(
                                                   '-',
                                                   style: TextStyle(
                                                     fontSize: 17.0,
-                                                    color: Color.fromRGBO(
-                                                        15, 119, 240, 1),
+                                                    color: minusColor5,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
@@ -2245,12 +2269,11 @@ class _MafiaState extends State<Mafia> {
                                                     }
                                                   });
                                                 },
-                                                child: const Text(
+                                                child: Text(
                                                   '-',
                                                   style: TextStyle(
                                                     fontSize: 17.0,
-                                                    color: Color.fromRGBO(
-                                                        15, 119, 240, 1),
+                                                    color: minusColor6,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
@@ -2572,12 +2595,11 @@ class _MafiaState extends State<Mafia> {
                                                     }
                                                   });
                                                 },
-                                                child: const Text(
+                                                child: Text(
                                                   '-',
                                                   style: TextStyle(
                                                     fontSize: 17.0,
-                                                    color: Color.fromRGBO(
-                                                        15, 119, 240, 1),
+                                                    color: minusColor7,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
@@ -2899,12 +2921,11 @@ class _MafiaState extends State<Mafia> {
                                                     }
                                                   });
                                                 },
-                                                child: const Text(
+                                                child: Text(
                                                   '-',
                                                   style: TextStyle(
                                                     fontSize: 17.0,
-                                                    color: Color.fromRGBO(
-                                                        15, 119, 240, 1),
+                                                    color: minusColor8,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
@@ -3226,12 +3247,11 @@ class _MafiaState extends State<Mafia> {
                                                     }
                                                   });
                                                 },
-                                                child: const Text(
+                                                child: Text(
                                                   '-',
                                                   style: TextStyle(
                                                     fontSize: 17.0,
-                                                    color: Color.fromRGBO(
-                                                        15, 119, 240, 1),
+                                                    color: minusColor9,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
@@ -3554,12 +3574,11 @@ class _MafiaState extends State<Mafia> {
                                                     }
                                                   });
                                                 },
-                                                child: const Text(
+                                                child: Text(
                                                   '-',
                                                   style: TextStyle(
                                                     fontSize: 17.0,
-                                                    color: Color.fromRGBO(
-                                                        15, 119, 240, 1),
+                                                    color: minusColor10,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
@@ -3759,17 +3778,17 @@ class _MafiaState extends State<Mafia> {
                   ),
                 ],
               ),
-                  Padding(
-                  padding: EdgeInsets.only(bottom:   MediaQuery.of(context).padding.bottom) ,
-                  child: const Align(
-                  alignment: Alignment.bottomCenter,
-                  child:
-                  TimerPlayer(),
-
-              ),
-                ),
               Padding(
-                padding:  EdgeInsets.only(bottom: 48 + MediaQuery.of(context).padding.bottom) ,
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).padding.bottom),
+                child: const Align(
+                  alignment: Alignment.bottomCenter,
+                  child: TimerPlayer(),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(
+                    bottom: 48 + MediaQuery.of(context).padding.bottom),
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: votingContainer
