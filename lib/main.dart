@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wakelock/wakelock.dart';
 import 'main_page.dart';
 
 
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Wakelock.disable();
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MainPage(),
