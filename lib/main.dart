@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Wakelock.disable();
+    Wakelock.enable();
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MainPage(),
